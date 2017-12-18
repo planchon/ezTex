@@ -1,0 +1,89 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[pdftex,
+            pdfauthor={__NAME__},
+            pdftitle={__LITTLE_TITLE__},
+            pdfsubject={__MAIN_TITLE__}, pdfcreator={pdflatex}]{hyperref}
+
+\usepackage[top = 50mm, headheight=62pt]{geometry}
+\usepackage{titleps}
+\usepackage{tabularx, booktabs, multirow}
+\usepackage{graphicx, adjustbox, microtype}
+\usepackage{lipsum}
+
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\renewcommand{\lstlistingname}{Code}
+\SetKwRepeat{Do}{do}{while}
+\def\code#1{\texttt{#1}}
+
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{comment}
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{0.5cm}
+\def\columnseprulecolor{\color{black}}
+
+\makeatletter
+     \renewcommand{\thesection}{\Roman{section}.}
+     \renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}.}
+     \renewcommand{\thesubsubsection}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}
+\makeatother
+
+\makeatletter
+     \renewcommand{\section}{\@startsection{section}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\Large\bfseries	}}
+     \renewcommand{\subsection}{\@startsection{subsection}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\large\bfseries}}
+     \renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\large\bfseries}}
+\makeatother
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\newpagestyle{style}{
+\sethead{}{%
+     \begin{tabularx}{\linewidth}[b]{@{}l>{\raggedleft\arraybackslash}X@{}}
+          \smash{\raisebox{-0.7\height}{\includegraphics[scale=0.5]{logo.png}}}& \today \\
+          \cmidrule[2pt]{2-2}
+          & \huge \bfseries __MAIN_TITLE__ \\
+          & __LITTLE_TITLE__
+          \addlinespace
+          \midrule[0.4pt]
+     \end{tabularx}}{}
+\setfoot{}{\thepage}{}
+}
+
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mathtools, bm}
+\usepackage{amssymb, bm}
+
+\usepackage[french]{babel}
+
+\pagestyle{style}
+
+\begin{document}
+
+__MAIN__
+
+\end{document}
