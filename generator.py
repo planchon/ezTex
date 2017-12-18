@@ -1,6 +1,7 @@
 import sys
 import os.path
 
+
 class ChapterClass:
     objects = []
     def __init__(self, title):
