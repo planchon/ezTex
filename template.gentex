@@ -1,0 +1,37 @@
+TITLE     :: Titre de l'article
+SUB_TITLE :: Aie-je un sous titre ?
+AUTHOR    :: Qui suis-je ?
+DATE      :: TODAY
+
+# Je suis un commantaire, je ne dois pas etre pris en compte
+# oue moi non plus
+
+CHAPTER :: Name of the chapter here
+
+	Je suis que du texte brut,
+	AVANT LA PARTIE ALGO
+
+	ALGO :: Je suis le titre de l'algo
+		Je suis un ALGO
+	END
+
+	Je suis du texte brut et oui,
+	MAIS APRES LA PARTIE ALGO
+
+	IMAGE :: image.png :: size=1.0 :: Je suis le titre de l'image
+
+	CODE :: Java :: Je suis le titre du code en Java
+		public static main void(string args[]){
+			Je suis du code en Java
+		}
+	END
+END
+
+CHAPTER :: Je suis un autre chapter
+	SUB_SECTION :: Je suis une sous-section
+		Je suis dans la sous-section
+	END
+
+	Et je suis super cool
+
+END

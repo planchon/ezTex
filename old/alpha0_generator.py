@@ -7,6 +7,13 @@ class ChapterClass:
     def __init__(self, title):
         self.title = title
 
+    def __str__(self):
+        finalString = ""
+        for items in self.objects:
+            finalString += "NEW OBJ\n"
+            finalString += "," + items.__str__()
+        return finalString
+
     def addObject(self, newObjects):
         self.objects.append(newObjects)
 
@@ -16,8 +23,43 @@ class textObj:
     def __init__(self):
         pass
 
+    def __str__(self):
+        finalString = ""
+        for items in self.textListe:
+            finalString += " -- NEW TEXT :\n"
+            finalString += items + "\n"
+        return finalString
+
     def addText(self, text):
         self.textListe.append(text)
+
+class algoObj:
+    rawInput    = []
+    finalOutput = []
+
+    def addData(self, data):
+        self.rawInput.append(data)
+
+    def processInput(input):
+        pass
+
+class imgObj:
+    imgLink    = ""
+    imgCaption = ""
+    imgSize    = ""
+
+    def processInput(input):
+        pass
+
+class codeObj:
+    rawInput = []
+    finalOutput = []
+
+    def addData(self, data):
+        self.rawInput.append(data)
+
+    def processInput(input):
+        pass
 
 CONFIG = {
     "little title" : "little_title",
@@ -48,28 +90,35 @@ def parseFile(fichier):
 
 def parseChapter(lines, title):
     chapter = ChapterClass(title)
-    requestNewTextObj = True
+    requestNewTextObj = False
     text = textObj()
     for i in range(0, len(lines)):
-        for args in lines[i]:
-            if args == "ALGO"  :
-                # traiter les algo
-                chapter.addObject(text)
-                requestNewTextObj = True
-            elif args == "C0DE"  :
-                # traiter les codes
-                chapter.addObject(text)
-                requestNewTextObj = True
-            elif args == "IMAGE" :
-                # traiter les images
-                chapter.addObject(text)
-                requestNewTextObj = True
-            else :
-                if requestNewTextObj:
-                    text = textObj()
-                    requestNewTextObj = False
-                text.addText(args)
-    chapter.addObject(text)
+        firstWord = lines[i][0]
+        if   (firstWord == "CODE"):
+            print("CODE")
+            chapter.addObject(text)
+            text = textObj()
+            closestEnd = findClosestEnd(lines, "END", i)
+            code = codeObj()
+            code.addData(lines[i + 1 : closestEnd - 1])
+            chapter.addObject(code)
+        elif (firstWord == "ALGO"):
+            print("ALGO")
+            chapter.addObject(text)
+            text = textObj()
+            closestEnd = findClosestEnd(lines, "END", i)
+            algo = algoObj()
+            algo.addData(lines[i + 1 : closestEnd - 1])
+            chapter.addObject(algo)
+        elif (firstWord == "IMAGE"):
+            print("IMAGE")
+            chapter.addObject(text)
+            text = textObj()
+            closestEnd = findClosestEnd(lines, "END", i)
+            pass
+        else:
+            print("WORD")
+            text.addText(lines[i])
     return chapter
 
 def findClosestEnd(array, word, index):
@@ -101,4 +150,4 @@ if __name__ == '__main__':
     fichier = openTemplateFile()
     lines   = parseFile(fichier)
     parserLines(lines)
-    print(CONFIG["chapter"])
+    # print(CONFIG["chapter"][1])
