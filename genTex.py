@@ -2,6 +2,9 @@ import sys
 import os.path
 import re
 
+from genClass import *
+from genInterpreter import *
+
 def processConsoleArgs():
     config = sys.argv[1:]
     if len(config) > 1:
@@ -43,6 +46,7 @@ def main():
     fichier       = processConsoleArgs()
     rawData       = createRawData(fichier)
     processedData = processRawData(rawData)
+    rawChapter    = interpretProcessedData(processedData)
 
 if __name__ == '__main__':
     main()

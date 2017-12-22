@@ -27,6 +27,28 @@ CHAPTER :: Name of the chapter here
 	END
 END
 
+CHAPTER :: LE SECOND, JE SUIS LE SECOND.
+
+	Tu sais le problème avec des test et des example ?
+	C'est que tu ne sais jamais quoi mettre dedans...
+	AVANT LA PARTIE ALGO
+
+	ALGO :: Ne rien mettre si vous ne voulez pas de titre.
+		SECRET SUPER COOL ALGO HERE
+	END
+
+	Je suis du texte brut et oui,
+	MAIS APRES LA PARTIE ALGO
+
+	IMAGE :: image.png :: size=1.0 :: Je suis le titre de l'image
+
+	CODE :: C++ :: Je suis le titre du code en Java
+		int main(){
+			return 0;
+		}
+	END
+END
+
 CHAPTER :: Je suis un autre chapter
 	SUB_SECTION :: Je suis une sous-section
 		Je suis dans la sous-section
