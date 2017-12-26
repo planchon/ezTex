@@ -4,6 +4,7 @@ import re
 
 from genClass import *
 from genInterpreter import *
+from render import *
 
 def processConsoleArgs():
     config = sys.argv[1:]
@@ -48,6 +49,8 @@ def main():
     processedData = processRawData(rawData)
     latexRawData  = interpretProcessedData(processedData)
     latexRawData.processedChapter()
-    
+    makeRender(latexRawData)
+
+
 if __name__ == '__main__':
     main()

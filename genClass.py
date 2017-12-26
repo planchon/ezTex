@@ -39,33 +39,80 @@ class elementObj:
         def renderToLatex(self):
             pass
 
+        def toStringData(self):
+            finalString = ""
+            for element in self.rawData:
+                print (len(element))
+                for i in range(len(element)):
+                    print(element[i][0])
+                    finalString += element[i][0]
+            return finalString
+
 class chapterObj(elementObj):
 
     def __init__(self, nameOfTheChapter):
         self.name = nameOfTheChapter
 
-    def processRawChapterData(self):
-        data = self.rawData
-        end = 0
-        for i in range(len(data)):
-            print(data[0][i][0])
-            if data[i][0] == "ALGO":
-                end = findEndObj(data, i)
-                print(end)
-            elif data[i][0] == "CODE":
-                pass
-            elif data[i][0] == "IMAGE":
-                pass
-            else :
-                pass
-                # c'est du texte.
-
-    def findEndObj(data, index):
+    def findEndObj(self, data, index):
         for i in range(index, len(data)):
-            if data[i] == "END":
+            if data[i][0] == "END":
                 return i
         print('No END sentence. Big ERROR. Stopping...')
         return -1000
 
+    def findBreakPoint(self, data, index):
+        breakpoints = ["ALGO", "CODE", "IMAGE", "END"]
+        for i in range(index, len(data)):
+            for brp in breakpoints:
+                if data[i][0] == brp:
+                    return i
+
+
+    def processRawChapterData(self):
+        data = self.rawData[0]
+        end = 0
+        self.processedData = []
+        for i in range(len(data)):
+            if data[i][0] == "ALGO":
+                if(len(data[i]) == 1):
+                    algo = algoObj("Algo sans titre")
+                else :
+                    algo = algoObj(data[i][0])
+                algo.rawData = []
+                end = self.findEndObj(data, i)
+                algo.addRawData(data[i : end])
+                self.processedData.append(algo)
+            elif data[i][0] == "CODE":
+                if(len(data[i]) == 1):
+                    code = codeObj("Code sans titre")
+                else :
+                    code = codeObj(data[i][0])
+                code.rawData = []
+                end = self.findEndObj(data, i)
+                code.addRawData(data[i : end])
+                self.processedData.append(code)
+            elif data[i][0] == "IMAGE":
+                pass
+            else :
+                text = textObj("")
+                text.rawData = []
+                end = self.findBreakPoint(data, i)
+                if(data[i : end] != []):
+                    text.addRawData(data[i : end])
+                    self.processedData.append(text)
+
 class algoObj(elementObj):
+    typeObj = "ALGO"
+    pass
+
+class codeObj(elementObj):
+    typeObj = "CODE"
+    pass
+
+class imgObj(elementObj):
+    typeObj = "IMAGE"
+    pass
+
+class textObj(elementObj):
+    typeObj = "TEXT"
     pass
