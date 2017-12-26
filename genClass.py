@@ -42,9 +42,9 @@ class elementObj:
         def toStringData(self):
             finalString = ""
             for element in self.rawData:
-                print (len(element))
+                # print (len(element))
                 for i in range(len(element)):
-                    print(element[i][0])
+                    # print(element[i][0])
                     finalString += element[i][0]
             return finalString
 
@@ -82,6 +82,7 @@ class chapterObj(elementObj):
                 end = self.findEndObj(data, i)
                 algo.addRawData(data[i : end])
                 self.processedData.append(algo)
+                i += end
             elif data[i][0] == "CODE":
                 if(len(data[i]) == 1):
                     code = codeObj("Code sans titre")
@@ -91,6 +92,7 @@ class chapterObj(elementObj):
                 end = self.findEndObj(data, i)
                 code.addRawData(data[i : end])
                 self.processedData.append(code)
+                i += end
             elif data[i][0] == "IMAGE":
                 pass
             else :
@@ -99,7 +101,14 @@ class chapterObj(elementObj):
                 end = self.findBreakPoint(data, i)
                 if(data[i : end] != []):
                     text.addRawData(data[i : end])
+                    print (data[i : end])
                     self.processedData.append(text)
+                i += end
+
+
+                # ATTENTION IL Y A UN BUG : 
+                # le dernier element de cahque text va au debut du precedent...
+                # wtf
 
 class algoObj(elementObj):
     typeObj = "ALGO"
