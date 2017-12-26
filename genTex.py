@@ -46,7 +46,8 @@ def main():
     fichier       = processConsoleArgs()
     rawData       = createRawData(fichier)
     processedData = processRawData(rawData)
-    rawChapter    = interpretProcessedData(processedData)
-
+    latexRawData  = interpretProcessedData(processedData)
+    latexRawData.processedChapter()
+    
 if __name__ == '__main__':
     main()

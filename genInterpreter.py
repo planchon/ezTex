@@ -4,11 +4,13 @@ def interpretProcessedData(processedData):
     index = 0
     latex = latexObj()
     for lines in processedData:
+        dataToChapter = []
         if lines[0] == "CHAPTER":
             chapter = chapterObj(lines[1])
+            chapter.rawData = []
             endOfChapter = findEndChapter(processedData, index)
-            print (processedData[index + 1 : endOfChapter - 1])
-            chapter.addRawData(processedData[index + 1 : endOfChapter])
+            dataToChapter = processedData[index + 1 : endOfChapter]
+            chapter.addRawData(dataToChapter)
             latex.addChapter(chapter)
         index += 1
     return latex
