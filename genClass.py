@@ -69,46 +69,40 @@ class chapterObj(elementObj):
 
 
     def processRawChapterData(self):
-        data = self.rawData[0]
+        i = 0
         end = 0
+        dataList = self.rawData[0]
+        print(self.name)
         self.processedData = []
-        for i in range(len(data)):
-            if data[i][0] == "ALGO":
-                if(len(data[i]) == 1):
-                    algo = algoObj("Algo sans titre")
-                else :
-                    algo = algoObj(data[i][0])
-                algo.rawData = []
-                end = self.findEndObj(data, i)
-                algo.addRawData(data[i : end])
-                self.processedData.append(algo)
-                i += end
-            elif data[i][0] == "CODE":
-                if(len(data[i]) == 1):
-                    code = codeObj("Code sans titre")
-                else :
-                    code = codeObj(data[i][0])
-                code.rawData = []
-                end = self.findEndObj(data, i)
-                code.addRawData(data[i : end])
-                self.processedData.append(code)
-                i += end
-            elif data[i][0] == "IMAGE":
-                pass
-            else :
-                text = textObj("")
-                text.rawData = []
-                end = self.findBreakPoint(data, i)
-                if(data[i : end] != []):
-                    text.addRawData(data[i : end])
-                    print (data[i : end])
-                    self.processedData.append(text)
-                i += end
+        while i < len(dataList):
+            data = dataList[i][0]
+            # print(data)
+            if data == "ALGO":
+                end = self.findEndObj(dataList, i)
+                print("ALGO", dataList[i : end])
+                i = end + 1
+            if data == "CODE":
+                end = self.findEndObj(dataList, i)
+                print("CODE", dataList[i : end])
+                i = end + 1
+            if data == "SUB_SECTION":
+                end = self.findEndObj(dataList, i)
+                print("SUB_SECTION", dataList[i : end])
+                i = end + 1
+            if data == "IMAGE":
+                print("IMAGE", dataList[i])
+                i = i + 1
+            else:
+                end = self.findBreakPoint(dataList, i)
+                print("TEXT", dataList[i : end])
+                if data == "END":
+                    i = end + 1
+                else:
+                    i = end
 
+                # BUG si i = end, comme a chaque fin de chapitre, on a un obj texte vide /!\
 
-                # ATTENTION IL Y A UN BUG : 
-                # le dernier element de cahque text va au debut du precedent...
-                # wtf
+        print('-------')
 
 class algoObj(elementObj):
     typeObj = "ALGO"

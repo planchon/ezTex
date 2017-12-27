@@ -13,6 +13,8 @@ CHAPTER :: CHAPTER1
 
 	ALGO :: Je suis le titre de l'algo
 		Je suis un ALGO
+		Je suis un ALGO
+		Je suis un ALGO
 	END
 
 	Je suis du texte brut et oui,
@@ -25,6 +27,8 @@ CHAPTER :: CHAPTER1
 			Je suis du code en Java
 		}
 	END
+
+	Fin du chap 1
 END
 
 CHAPTER :: CHAPTER2
@@ -51,6 +55,9 @@ CHAPTER :: CHAPTER2
 			return 0;
 		}
 	END
+
+	Fin du chap 2
+
 END
 
 CHAPTER :: CHAPTER3
