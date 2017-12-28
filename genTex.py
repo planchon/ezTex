@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import os.path
 import re
@@ -49,6 +51,7 @@ def main():
     processedData = processRawData(rawData)
     latexRawData  = interpretProcessedData(processedData)
     latexRawData.processedChapter()
+    latexRawData.renderToLatex()
     makeRender(latexRawData)
 
 

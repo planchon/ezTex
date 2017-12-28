@@ -5,6 +5,17 @@ def interpretProcessedData(processedData):
     latex = latexObj()
     for lines in processedData:
         dataToChapter = []
+        print(lines[0])
+        if lines[0] == "TITLE":
+            latex.mainTitle = lines[1]
+        if lines[0] == "SUB_TITLE":
+            latex.subTitle = lines[1]
+        if lines[0] == "AUTHOR":
+            latex.author = lines[1]
+        if lines[0] == "DATE":
+            latex.date = lines[1]
+        if lines[0] == "TABLE_OF_CONTENT":
+            latex.tableOfContent = True
         if lines[0] == "CHAPTER":
             chapter = chapterObj(lines[1])
             chapter.rawData = []

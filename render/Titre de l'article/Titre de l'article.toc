@@ -1,0 +1,6 @@
+\select@language {french}
+\contentsline {section}{\numberline {I.}CHAPTER1}{1}{section.1}
+\contentsline {subsection}{\numberline {I.1.}test}{1}{subsection.1.1}
+\contentsline {section}{\numberline {II.}CHAPTER2}{2}{section.2}
+\contentsline {section}{\numberline {III.}CHAPTER3}{2}{section.3}
+\contentsline {subsection}{\numberline {III.1.}Je suis une sous-section}{2}{subsection.3.1}

@@ -2,6 +2,7 @@ TITLE     :: Titre de l'article
 SUB_TITLE :: Aie-je un sous titre ?
 AUTHOR    :: Qui suis-je ?
 DATE      :: TODAY
+TABLE_OF_CONTENT :: TRUE
 
 # Je suis un commantaire, je ne dois pas etre pris en compte
 # oue moi non plus
@@ -10,7 +11,10 @@ CHAPTER :: CHAPTER1
 
 	Je suis que du texte brut,
 	AVANT LA PARTIE ALGO
+	\newpage
 
+	thesection
+	
 	ALGO :: Je suis le titre de l'algo
 		Je suis un ALGO
 		Je suis un ALGO
@@ -62,8 +66,8 @@ END
 
 CHAPTER :: CHAPTER3
 	SUB_SECTION :: Je suis une sous-section
-		Je suis dans la sous-section
-	END
+
+	Je suis dans la sous-section
 
 	Et je suis super cool
 

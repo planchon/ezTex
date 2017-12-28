@@ -1,0 +1,116 @@
+%% ------------------------------------------------------
+%%	Document Latex créé par Paul Planchon (pdubs)
+%%		le 24/04/2017 à Bordeaux
+%%	      mis à jour de façon régulière
+%%          Créditer l'auteur serait bienvenus
+%% ------------------------------------------------------
+
+\documentclass[11pt, a4paper]{article}
+
+%% Tous les packages pour écrire en français %%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[pdftex,
+            pdfauthor={Qui suis-je ?},
+            pdftitle={Aie-je un sous titre ?},
+            pdfsubject={Titre de l'article}, pdfcreator={pdflatex}]{hyperref}
+
+
+%% Autres packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[top = 50mm, headheight=62pt]{geometry}
+\usepackage{titleps}
+\usepackage{tabularx, booktabs, multirow}
+\usepackage{graphicx, adjustbox, microtype}
+\usepackage{lipsum}
+
+%% Pour display du code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+%% Les deux colonnes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{comment}
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{0.5cm}
+\def\columnseprulecolor{\color{black}}
+
+%% Table des matières %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\Roman{section}.\arabic{subsection}}
+\makeatother
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus .2ex}%
+	{\reset@font\Large\bfseries	}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus .2ex}%
+	{\reset@font\large\bfseries}}
+\makeatother
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+%% Titre %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\newpagestyle{style}{%
+\sethead{}{%
+\begin{tabularx}{\linewidth}[b]{@{}l>{\raggedleft\arraybackslash}X@{}}
+\smash{\raisebox{-0.7\height}{\includegraphics[scale=0.5]{logo.png}}}& \today \\
+\cmidrule[2pt]{2-2}
+& \huge \bfseries Titre de l'article \\
+& Aie-je un sous titre ? \\
+\addlinespace
+\midrule[0.4pt]
+\end{tabularx}%
+}{}
+\setfoot{}{\thepage}{}
+}%
+
+%% Début du document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[french]{babel}
+\pagestyle{style}
+\begin{document}
+\tableofcontents
+
+\section{CHAPTER1}
+\subsection{test}
+Je suis que du texte brut,
+AVANT LA PARTIE ALGO
+\newpage
+thesection
+
+\texttt{YA UNE ALGO ICI}Je suis du texte brut et oui,
+MAIS APRES LA PARTIE ALGO
+\texttt{YA UNE IMAGE ICI}\texttt{YA UN CODE ICI}Fin du chap 1
+\section{CHAPTER2}
+Tu sais le problème avec des test et des example ?
+C'est que tu ne sais jamais quoi mettre dedans...
+AVANT LA PARTIE ALGO
+\texttt{YA UNE ALGO ICI}Je suis du texte brut et oui,
+MAIS APRES LA PARTIE ALGO
+\texttt{YA UNE IMAGE ICI}\texttt{YA UN CODE ICI}Fin du chap 2
+\section{CHAPTER3}
+\subsection{Je suis une sous-section}Je suis dans la sous-section
+Et je suis super cool
+
+
+\end{document}
