@@ -13,8 +13,12 @@ def interpretProcessedData(processedData):
             latex.author = lines[1]
         if lines[0] == "DATE":
             latex.date = lines[1]
-        if lines[0] == "TABLE_OF_CONTENT":
+        if lines[0] == "TABLE_OF_CONTENT" and lines[1] == "TRUE":
             latex.tableOfContent = True
+        if lines[0] == "PREVIEW" and lines[1] == "TRUE":
+            latex.preview = True
+        if lines[0] == "BACK_UP" and lines[1] == "TRUE":
+            latex.backup = True
         if lines[0] == "CHAPTER":
             chapter = chapterObj(lines[1])
             chapter.rawData = []

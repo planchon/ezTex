@@ -6,8 +6,9 @@ AUTHOR           :: Qui suis-je ?
 DATE             :: TODAY
 TABLE_OF_CONTENT :: TRUE
 BACK_UP          :: TRUE
+PREVIEW          :: TRUE
 
-CHAPTER :: CHAPTER1
+CHAPTER :: Chapitre 1 COucou
 
 	Je suis que du texte brut,
 	AVANT LA PARTIE ALGO
@@ -26,11 +27,17 @@ CHAPTER :: CHAPTER1
 
 	CODE :: Java :: Je suis le titre du code en Java
 		public static main void(string args[]){
-			Je suis du code en Java
+			system.out.println('Coucou')
 		}
 	END
 
-	Fin du chap 1
+	Salut ca va ?
+	Salut ca va ?
+	Salut ca va ?
+	Salut ca va ?
+	Salut ca va ?
+	Salut ca va ?
+
 END
 
 CHAPTER :: CHAPTER2
@@ -54,6 +61,9 @@ CHAPTER :: CHAPTER2
 
 	CODE :: C++ :: Je suis le titre du code en C++
 		int main(){
+			for(int i = 0; i< 10; i++){
+				std::cout << i << std::endl;
+			}
 			return 0;
 		}
 	END
@@ -72,6 +82,30 @@ CHAPTER :: CHAPTER3
 END
 
 CHAPTER :: Chapitre 4
+	SUB_SECTION :: Sous section
+
+	CODE :: C++ :: Je suis le titre du code en C++
+		int main(){
+			return 0;
+		}
+	END
+
+	text
+END
+
+CHAPTER :: OSU Pour mathéo
+	SUB_SECTION :: Sous section
+
+	CODE :: C++ :: Je suis le titre du code en C++
+		int main(){
+			return 0;
+		}
+	END
+
+	text
+END
+
+CHAPTER :: Random
 	SUB_SECTION :: Sous section
 
 	CODE :: C++ :: Je suis le titre du code en C++

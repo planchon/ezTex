@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.29)  30 DEC 2017 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.29)  30 DEC 2017 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Titre de l'article.tex"
-(./Titre de l'article.tex
+**f4b4e121f692dac16fa34116a2e83cc8.tex
+(./f4b4e121f692dac16fa34116a2e83cc8.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1693,8 +1693,8 @@ Package frenchb.ldf Warning: Please load the "listings" package
 \leftmarginFB=\skip97
 \parindentFFN=\dimen331
 )) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(./Titre de l'article.aux)
-\openout1 = `"Titre de l'article.aux"'.
+(./f4b4e121f692dac16fa34116a2e83cc8.aux)
+\openout1 = `f4b4e121f692dac16fa34116a2e83cc8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
 LaTeX Font Info:    ... okay on input line 133.
@@ -1738,9 +1738,10 @@ LaTeX Info: Redefining \ref on input line 133.
 LaTeX Info: Redefining \pageref on input line 133.
 LaTeX Info: Redefining \nameref on input line 133.
 
-(./Titre de l'article.out) (./Titre de l'article.out)
+(./f4b4e121f692dac16fa34116a2e83cc8.out)
+(./f4b4e121f692dac16fa34116a2e83cc8.out)
 \@outlinefile=\write7
-\openout7 = `"Titre de l'article.out"'.
+\openout7 = `f4b4e121f692dac16fa34116a2e83cc8.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1885,7 +1886,7 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \degres on input line 133.
 LaTeX Info: Redefining \dots on input line 133.
 LaTeX Info: Redefining \up on input line 133.
- (./Titre de l'article.toc
+ (./f4b4e121f692dac16fa34116a2e83cc8.toc
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.42499pt
 number indent by parent (toc, 1):  0.0pt
@@ -1896,6 +1897,26 @@ text indent by \l@... (toc, 1):  16.42499pt
 number indent by parent (toc, 1):  0.0pt
 text indent calculated (toc, 1): 24.81956pt
 number indent calculated (toc, 1): 0.0pt
+number indent by \l@... (toc, 1):  0.0pt
+text indent by \l@... (toc, 1):  16.42499pt
+number indent by parent (toc, 1):  0.0pt
+text indent calculated (toc, 1): 24.81956pt
+number indent calculated (toc, 1): 0.0pt
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  24.81956pt
+text indent calculated (toc, 2): 29.50368pt
+number indent calculated (toc, 2): 24.81956pt
+number indent by \l@... (toc, 1):  0.0pt
+text indent by \l@... (toc, 1):  16.42499pt
+number indent by parent (toc, 1):  0.0pt
+text indent calculated (toc, 1): 24.81956pt
+number indent calculated (toc, 1): 0.0pt
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  24.81956pt
+text indent calculated (toc, 2): 29.50368pt
+number indent calculated (toc, 2): 24.81956pt
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.42499pt
 number indent by parent (toc, 1):  0.0pt
@@ -1918,9 +1939,9 @@ text indent calculated (toc, 2): 29.50368pt
 number indent calculated (toc, 2): 24.81956pt
 )
 \tf@toc=\write8
-\openout8 = `"Titre de l'article.toc"'.
+\openout8 = `f4b4e121f692dac16fa34116a2e83cc8.toc'.
 
- <logo.png, id=37, 199.947pt x 108.405pt> <use logo.png> <use logo.png>
+ <logo.png, id=57, 199.947pt x 108.405pt> <use logo.png> <use logo.png>
 File: logo.png Graphic file (type png)
 
 <use logo.png>
@@ -1938,75 +1959,111 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\openout5 = `"Titre de l'article.listing"'.
+\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./Titre de l'article.listing) <image.png, id=49, 296.10625pt x 188.705pt>
-File: image.png Graphic file (type png)
+(./f4b4e121f692dac16fa34116a2e83cc8.listing
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 2.
 
-<use image.png>
-Package pdftex.def Info: image.png used on input line 155.
-(pdftex.def)             Requested size: 148.05275pt x 94.35226pt.
+(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `texttrademark ' is missing
+(microtype)             in font `TS1/lmtt/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+)
+
+LaTeX Warning: File `image.png' not found on input line 160.
+
+
+! Package pdftex.def Error: File `image.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.160 ...includegraphics[scale = 0.5]{image.png}}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-\openout5 = `"Titre de l'article.listing"'.
+\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
 
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-(./Titre de l'article.listing)
-\openout5 = `"Titre de l'article.listing"'.
+(./f4b4e121f692dac16fa34116a2e83cc8.listing)
+\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
 
- (./Titre de l'article.listing) <use logo.png>
-<use logo.png>
+
+(./f4b4e121f692dac16fa34116a2e83cc8.listing) <use logo.png> <use logo.png>
 File: logo.png Graphic file (type png)
- <use logo.png>
-Package pdftex.def Info: logo.png used on input line 172.
-(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
- [2 <./image.png>]
 
+<use logo.png>
+Package pdftex.def Info: logo.png used on input line 180.
+(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
+ [2]
+\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
+
+ (./f4b4e121f692dac16fa34116a2e83cc8.listing)
+\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
+
+
+(./f4b4e121f692dac16fa34116a2e83cc8.listing) 
 AED: lastpage setting LastPage
 <use logo.png> <use logo.png>
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 175.
+Package pdftex.def Info: logo.png used on input line 197.
 (pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
  [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
- (./Titre de l'article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
-Package rerunfilecheck Info: File `"Titre de l'article".out' has not changed.
-(rerunfilecheck)             Checksum: 0C198C0A11F9151DECFEB2CED954D265;308.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+
+(./f4b4e121f692dac16fa34116a2e83cc8.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
+Package rerunfilecheck Info: File `f4b4e121f692dac16fa34116a2e83cc8.out' has no
+t changed.
+(rerunfilecheck)             Checksum: 823C2B758DBC5B8885AF8ECE061310B2;534.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 37767 strings out of 493029
- 717434 string characters out of 6136233
- 966939 words of memory out of 5000000
- 40647 multiletter control sequences out of 15000+600000
- 58982 words of font info for 62 fonts, out of 8000000 for 9000
+ 37832 strings out of 493029
+ 718836 string characters out of 6136233
+ 969268 words of memory out of 5000000
+ 40687 multiletter control sequences out of 15000+600000
+ 59287 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,20n,103p,10479b,1586s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
-public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on "Titre de l'article.pdf" (3 pages, 207818 bytes).
+ 63i,20n,103p,10491b,1802s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt1
+0.pfb>
+Output written on f4b4e121f692dac16fa34116a2e83cc8.pdf (3 pages, 162606 bytes).
+
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
- 14919 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 15458 words of extra memory for PDF output out of 17280 (max. 10000000)
 

@@ -1,11 +1,14 @@
 class latexObj:
-    mainTitle      = ""
-    subTitle       = ""
-    author         = ""
-    date           = ""
-    finalMainData  = ""
-    tableOfContent = False
-    chapter       = []
+    mainTitle       = ""
+    mainTitleHashed = ""
+    subTitle        = ""
+    author          = ""
+    date            = ""
+    finalMainData   = ""
+    tableOfContent  = False
+    preview         = False
+    backup          = False
+    chapter         = []
 
     def addChapter(self, chapterToAdd):
         self.chapter.append(chapterToAdd)
