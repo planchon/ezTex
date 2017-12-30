@@ -15,7 +15,6 @@ class latexObj:
             element.processRawChapterData()
 
     def renderToLatex(self):
-        print(self.tableOfContent)
         if self.tableOfContent:
             self.finalMainData += "\\tableofcontents"
         for chapter in self.chapter:
@@ -158,20 +157,40 @@ class algoObj(elementObj):
     typeObj = "ALGO"
 
     def renderToLatex(self):
-        return '\\texttt{YA UNE ALGO ICI}'
+        return '\\texttt{YA UNE ALGO ICI} \\\\'
 
 class codeObj(elementObj):
     typeObj = "CODE"
 
     def renderToLatex(self):
-        return '\\texttt{YA UN CODE ICI}'
+        finalString = ""
+        data = self.rawData[0]
+        lang = data[0][1]
+        print (lang)
+        if (lang == "C++"):
+            finalString += "\\begin{cppCode}{" + data[0][2] + "} \n"
+            for i in range(1, len(data)):
+                finalString += data[i][0] + "\n"
+            finalString += "\\end{cppCode} \n"
+        if (lang == "Java"):
+            finalString += "\\begin{javaCode}{" + data[0][2] + "} \n"
+            for i in range(1, len(data)):
+                finalString += data[i][0] + "\n"
+            finalString += "\\end{javaCode} \n"
+
+        return finalString
 
 class imgObj(elementObj):
     typeObj = "IMAGE"
     pass
 
     def renderToLatex(self):
-        return '\\texttt{YA UNE IMAGE ICI}'
+        finalString = ""
+        finalString += "\\begin{figure}[h!] \n"
+        finalString += "\\centerline{\\fbox{\\includegraphics[" + self.rawData[0][2] + "]{" + self.rawData[0][1] + "}}} \n"
+        finalString += "\\caption{" + self.rawData[0][3] + "} \n"
+        finalString += "\\end{figure}"
+        return finalString
 
 class subSectionObj(elementObj):
     typeObj = "SUB_SECTION"
@@ -179,7 +198,6 @@ class subSectionObj(elementObj):
 
     def renderToLatex(self):
         stringToLatex = ""
-        print(self.rawData[0])
         stringToLatex = "\subsection{" + self.rawData[0][1] + "}"
         return stringToLatex
 
@@ -188,7 +206,6 @@ class textObj(elementObj):
 
     def renderToLatex(self):
         stringToLatex = ""
-        print(self.rawData[0])
         for element in self.rawData[0]:
             stringToLatex += element[0] + "\n"
         return stringToLatex

@@ -1,11 +1,11 @@
-TITLE     :: Titre de l'article
-SUB_TITLE :: Aie-je un sous titre ?
-AUTHOR    :: Qui suis-je ?
-DATE      :: TODAY
-TABLE_OF_CONTENT :: TRUE
+# Fichier example
 
-# Je suis un commantaire, je ne dois pas etre pris en compte
-# oue moi non plus
+TITLE            :: Titre de l'article
+SUB_TITLE        :: Aie-je un sous titre ?
+AUTHOR           :: Qui suis-je ?
+DATE             :: TODAY
+TABLE_OF_CONTENT :: TRUE
+BACK_UP          :: TRUE
 
 CHAPTER :: CHAPTER1
 
@@ -14,7 +14,7 @@ CHAPTER :: CHAPTER1
 	\newpage
 
 	thesection
-	
+
 	ALGO :: Je suis le titre de l'algo
 		Je suis un ALGO
 		Je suis un ALGO
@@ -23,8 +23,6 @@ CHAPTER :: CHAPTER1
 
 	Je suis du texte brut et oui,
 	MAIS APRES LA PARTIE ALGO
-
-	IMAGE :: image.png :: size=1.0 :: Je suis le titre de l'image
 
 	CODE :: Java :: Je suis le titre du code en Java
 		public static main void(string args[]){
@@ -52,9 +50,9 @@ CHAPTER :: CHAPTER2
 	Je suis du texte brut et oui,
 	MAIS APRES LA PARTIE ALGO
 
-	IMAGE :: image.png :: size=1.0 :: Je suis le titre de l'image
+	IMAGE :: image.png :: scale = 0.5 :: Je suis le titre de l'image
 
-	CODE :: C++ :: Je suis le titre du code en Java
+	CODE :: C++ :: Je suis le titre du code en C++
 		int main(){
 			return 0;
 		}
@@ -71,4 +69,16 @@ CHAPTER :: CHAPTER3
 
 	Et je suis super cool
 
+END
+
+CHAPTER :: Chapitre 4
+	SUB_SECTION :: Sous section
+
+	CODE :: C++ :: Je suis le titre du code en C++
+		int main(){
+			return 0;
+		}
+	END
+
+	text
 END

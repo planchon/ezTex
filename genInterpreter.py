@@ -5,7 +5,6 @@ def interpretProcessedData(processedData):
     latex = latexObj()
     for lines in processedData:
         dataToChapter = []
-        print(lines[0])
         if lines[0] == "TITLE":
             latex.mainTitle = lines[1]
         if lines[0] == "SUB_TITLE":
