@@ -30,19 +30,43 @@ def createRawData(fichier):
 
     return lines
 
+def findCodeEnd(data, index):
+    for i in range(index, len(data)):
+        if (data[i][0].lstrip().rstrip() == "END"):
+            return i
+    return -1
+
+def findTabToDel(data):
+    tabToDel = 1000
+    for i in range(0, len(data)):
+        tab = repr(data[i][0].count('\t'))
+        print(tab > tabToDel)
+        if (tab < tabToDel):
+            tabToDel = tab
+    return tabToDel
+
+
 def processRawData(rawData):
     processedData = []
+    inCode = False
+    inCodeTabDel = 0
+    index = 0
     for listOfData in rawData:
         tmpList = []
         for data in listOfData:
             if (data == '' or data[0] == '#'):
                 pass
+            elif (data.lstrip().rstrip() == "CODE"):
+                    inCode = True
+                    end = findCodeEnd(rawData, index)
+                    inCodeTabDel = findTabToDel(rawData[index : end])
+                    print inCodeTabDel
             else:
                 tmp = data.lstrip().rstrip()
                 tmpList.append(tmp)
         if len(tmpList) > 0:
             processedData.append(tmpList)
-
+        index += 1
     return processedData
 
 def main():
@@ -50,9 +74,9 @@ def main():
     rawData       = createRawData(fichier)
     processedData = processRawData(rawData)
     latexRawData  = interpretProcessedData(processedData)
-    latexRawData.processedChapter()
-    latexRawData.renderToLatex()
-    makeRender(latexRawData)
+    # latexRawData.processedChapter()
+    # latexRawData.renderToLatex()
+    # makeRender(latexRawData)
 
 
 if __name__ == '__main__':

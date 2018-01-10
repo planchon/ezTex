@@ -8,7 +8,7 @@ TABLE_OF_CONTENT :: TRUE
 BACK_UP          :: TRUE
 PREVIEW          :: TRUE
 
-CHAPTER :: Chapitre 1 COucou
+CHAPTER :: Cyril et bapptise
 
 	Je suis que du texte brut,
 	AVANT LA PARTIE ALGO
@@ -24,6 +24,12 @@ CHAPTER :: Chapitre 1 COucou
 
 	Je suis du texte brut et oui,
 	MAIS APRES LA PARTIE ALGO
+
+	CODE :: Java :: Je suis le titre du code en Java
+		public static main void(string args[]){
+			system.out.println('Coucou')
+		}
+	END
 
 	CODE :: Java :: Je suis le titre du code en Java
 		public static main void(string args[]){

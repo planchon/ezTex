@@ -1,8 +1,8 @@
 \select@language {french}
-\contentsline {section}{\numberline {I.}Chapitre 1 COucou}{1}{section.1}
+\contentsline {section}{\numberline {I.}Cyril et bapptise}{1}{section.1}
 \contentsline {section}{\numberline {II.}CHAPTER2}{2}{section.2}
-\contentsline {section}{\numberline {III.}CHAPTER3}{2}{section.3}
-\contentsline {subsection}{\numberline {III.1.}Je suis une sous-section}{2}{subsection.3.1}
+\contentsline {section}{\numberline {III.}CHAPTER3}{3}{section.3}
+\contentsline {subsection}{\numberline {III.1.}Je suis une sous-section}{3}{subsection.3.1}
 \contentsline {section}{\numberline {IV.}Chapitre 4}{3}{section.4}
 \contentsline {subsection}{\numberline {IV.1.}Sous section}{3}{subsection.4.1}
 \contentsline {section}{\numberline {V.}OSU Pour math\IeC {\'e}o}{3}{section.5}
