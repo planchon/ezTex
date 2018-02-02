@@ -24,6 +24,7 @@ def interpretProcessedData(processedData):
             chapter.rawData = []
             endOfChapter = findEndChapter(processedData, index)
             dataToChapter = processedData[index + 1 : endOfChapter]
+            print dataToChapter
             chapter.addRawData(dataToChapter)
             latex.addChapter(chapter)
         index += 1

@@ -82,13 +82,17 @@ class chapterObj(elementObj):
     def processRawChapterData(self):
         i = 0
         end = 0
+
+
         dataList = self.rawData[0]
-        self.processedData = []
+        print dataList
         while i < len(dataList):
             data = dataList[i][0]
 
             # On traite chaque cas de breakpoint : image, code, algo...
             # et on les mets dans leur obj respectif en vue d'un traitement futur.
+
+            print data
 
             if data == "ALGO":
                 if len(dataList[i]) > 1:
@@ -103,7 +107,8 @@ class chapterObj(elementObj):
                 i = end + 1
                 self.processedData.append(algo)
 
-            if data == "CODE":
+            elif data == "CODE":
+
                 if len(dataList[i]) > 1:
                     code = codeObj(dataList[i][1])
                 else:
@@ -111,12 +116,12 @@ class chapterObj(elementObj):
 
                 code.rawData = []
                 end = self.findEndObj(dataList, i)
-                # print("CODE", dataList[i : end])
+                # print(dataList[i : end])
                 code.addRawData(dataList[i : end])
                 i = end + 1
                 self.processedData.append(code)
 
-            if data == "SUB_SECTION":
+            elif data == "SUB_SECTION":
                 if len(dataList[i]) > 1:
                     sub = subSectionObj(dataList[i][1])
                 else:
@@ -125,10 +130,10 @@ class chapterObj(elementObj):
                 # print("SUB_SECTION", dataList[i])
                 sub.rawData = []
                 sub.addRawData(dataList[i])
-                i = end + 1
+                i = i + 1
                 self.processedData.append(sub)
 
-            if data == "IMAGE":
+            elif data == "IMAGE":
                 if len(dataList[i]) > 1:
                     image = imgObj(dataList[i][1])
                     image.rawData = []
@@ -151,7 +156,7 @@ class chapterObj(elementObj):
                 if data == "END":
                     i = end + 1
                 else:
-                    i = end
+                    i = i + 1
 
 
         # print('-------')
@@ -169,7 +174,6 @@ class codeObj(elementObj):
         finalString = ""
         data = self.rawData[0]
         lang = data[0][1]
-        print (lang)
         if (lang == "C++"):
             finalString += "\\begin{cppCode}{" + data[0][2] + "} \n"
             for i in range(1, len(data)):

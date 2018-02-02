@@ -1,5 +1,3 @@
-# Fichier example
-
 TITLE            :: Titre de l'article
 SUB_TITLE        :: Aie-je un sous titre ?
 AUTHOR           :: Qui suis-je ?
@@ -8,117 +6,32 @@ TABLE_OF_CONTENT :: TRUE
 BACK_UP          :: TRUE
 PREVIEW          :: TRUE
 
-CHAPTER :: Cyril et bapptise
+CHAPTER :: Nom du chapitre 1
 
-	Je suis que du texte brut,
-	AVANT LA PARTIE ALGO
-	\newpage
+	SUB_SECTION :: Test 1
 
-	thesection
-
-	ALGO :: Je suis le titre de l'algo
-		Je suis un ALGO
-		Je suis un ALGO
-		Je suis un ALGO
-	END
-
-	Je suis du texte brut et oui,
-	MAIS APRES LA PARTIE ALGO
-
-	CODE :: Java :: Je suis le titre du code en Java
-		public static main void(string args[]){
-			system.out.println('Coucou')
+	CODE :: Java :: Titre du code
+		public static void main (string args[]){
+			system.out.print("coucou");
 		}
 	END
 
-	CODE :: Java :: Je suis le titre du code en Java
-		public static main void(string args[]){
-			system.out.println('Coucou')
+	SUB_SECTION :: Test 2
+
+	CODE :: Java :: Titre du code
+		public static void main (string args[]){
+			system.out.print("coucou");
 		}
 	END
-
-	Salut ca va ?
-	Salut ca va ?
-	Salut ca va ?
-	Salut ca va ?
-	Salut ca va ?
-	Salut ca va ?
-
 END
 
-CHAPTER :: CHAPTER2
+CHAPTER :: Chapitre 2
 
-	Tu sais le problème avec des test et des example ?
-	C'est que tu ne sais jamais quoi mettre dedans...
-	AVANT LA PARTIE ALGO
+	SUB_SECTION :: Je suis une section
 
-	ALGO :: Ne rien mettre si vous ne voulez pas de titre.
-		SECRET SUPER COOL ALGO HERE
-		ET oui
-		JE SUIS UN ALGO TROP
-		cool
-		MAis trop long
-	END
-
-	Je suis du texte brut et oui,
-	MAIS APRES LA PARTIE ALGO
-
-	IMAGE :: image.png :: scale = 0.5 :: Je suis le titre de l'image
-
-	CODE :: C++ :: Je suis le titre du code en C++
-		int main(){
-			for(int i = 0; i< 10; i++){
-				std::cout << i << std::endl;
-			}
-			return 0;
+	CODE :: C++ :: Je suis un code en c++
+		int main() {
+			cout << "coucou" << endl;
 		}
 	END
-
-	Fin du chap 2
-
-END
-
-CHAPTER :: CHAPTER3
-	SUB_SECTION :: Je suis une sous-section
-
-	Je suis dans la sous-section
-
-	Et je suis super cool
-
-END
-
-CHAPTER :: Chapitre 4
-	SUB_SECTION :: Sous section
-
-	CODE :: C++ :: Je suis le titre du code en C++
-		int main(){
-			return 0;
-		}
-	END
-
-	text
-END
-
-CHAPTER :: OSU Pour mathéo
-	SUB_SECTION :: Sous section
-
-	CODE :: C++ :: Je suis le titre du code en C++
-		int main(){
-			return 0;
-		}
-	END
-
-	text
-END
-
-CHAPTER :: Random
-	SUB_SECTION :: Sous section
-
-	CODE :: C++ :: Je suis le titre du code en C++
-		int main(){
-			return 0;
-		}
-	END
-
-	text
 END
