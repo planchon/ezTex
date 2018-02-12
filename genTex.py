@@ -79,7 +79,6 @@ def processRawData(rawData):
                 if not areInCode:
                     for element in rawData[i]:
                             listTemp.append(element.lstrip().rstrip())
-                    print listTemp
                     processedData.append(listTemp)
 
     return processedData
@@ -91,7 +90,7 @@ def main():
     latexRawData  = interpretProcessedData(processedData)
     latexRawData.processedChapter()
     latexRawData.renderToLatex()
-    makeRender(latexRawData)
+    # makeRender(latexRawData)
 
 
 if __name__ == '__main__':

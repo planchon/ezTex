@@ -27,7 +27,7 @@ def makeRender(latex):
     os.chdir(latexRenderDir)
     command = "pdflatex " + latex.mainTitleHashed + ".tex"
 
-    for i in range(3):
+    for i in range(2):
         os.system(command)
 
     if (latex.preview):

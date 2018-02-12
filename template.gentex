@@ -1,22 +1,14 @@
-TITLE            :: Titre de l'article
 SUB_TITLE        :: Aie-je un sous titre ?
+TITLE            :: Titre de l'article
 AUTHOR           :: Qui suis-je ?
 DATE             :: TODAY
 TABLE_OF_CONTENT :: TRUE
 BACK_UP          :: TRUE
 PREVIEW          :: TRUE
 
-CHAPTER :: Nom du chapitre 1
+CHAPTER :: Chapitre 1
 
 	SUB_SECTION :: Test 1
-
-	CODE :: Java :: Titre du code
-		public static void main (string args[]){
-			system.out.print("coucou");
-		}
-	END
-
-	SUB_SECTION :: Test 2
 
 	CODE :: Java :: Titre du code
 		public static void main (string args[]){
@@ -27,7 +19,7 @@ END
 
 CHAPTER :: Chapitre 2
 
-	SUB_SECTION :: Je suis une section
+	SUB_SECTION :: Test 2
 
 	CODE :: C++ :: Je suis un code en c++
 		int main() {

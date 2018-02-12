@@ -21,11 +21,12 @@ class latexObj:
         if self.tableOfContent:
             self.finalMainData += "\\tableofcontents"
         for chapter in self.chapter:
-            # print(chapter.name)
             self.finalMainData += "\\section{" + chapter.name + "} \n"
             for objects in chapter.processedData:
                 self.finalMainData += objects.renderToLatex()
-        # print('FINAL STRING : ', self.finalMainData)
+                print chapter
+                print objects.renderToLatex()
+                print '----'
 
 class elementObj:
         name = ""
@@ -165,7 +166,7 @@ class algoObj(elementObj):
     typeObj = "ALGO"
 
     def renderToLatex(self):
-        return '\\texttt{YA UNE ALGO ICI} \\\\'
+        return '\\texttt{YA UNE ALGO ICI} \\newline\\'
 
 class codeObj(elementObj):
     typeObj = "CODE"
