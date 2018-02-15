@@ -24,9 +24,6 @@ class latexObj:
             self.finalMainData += "\\section{" + chapter.name + "} \n"
             for objects in chapter.processedData:
                 self.finalMainData += objects.renderToLatex()
-                print chapter
-                print objects.renderToLatex()
-                print '----'
 
 class elementObj:
         name = ""
@@ -84,16 +81,20 @@ class chapterObj(elementObj):
         i = 0
         end = 0
 
+        print '------'
+        print self.name
 
         dataList = self.rawData[0]
-        print dataList
+
+        print self.rawData
+
+        self.processedData = []
+
         while i < len(dataList):
             data = dataList[i][0]
 
             # On traite chaque cas de breakpoint : image, code, algo...
             # et on les mets dans leur obj respectif en vue d'un traitement futur.
-
-            print data
 
             if data == "ALGO":
                 if len(dataList[i]) > 1:
@@ -160,7 +161,12 @@ class chapterObj(elementObj):
                     i = i + 1
 
 
-        # print('-------')
+
+        print('----oo---')
+        print len(self.processedData)
+        for element in self.processedData:
+            print element.rawData
+        print('----vv---')
 
 class algoObj(elementObj):
     typeObj = "ALGO"

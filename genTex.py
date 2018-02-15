@@ -90,7 +90,7 @@ def main():
     latexRawData  = interpretProcessedData(processedData)
     latexRawData.processedChapter()
     latexRawData.renderToLatex()
-    # makeRender(latexRawData)
+    makeRender(latexRawData)
 
 
 if __name__ == '__main__':
