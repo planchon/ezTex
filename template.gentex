@@ -6,15 +6,14 @@ TABLE_OF_CONTENT :: TRUE
 BACK_UP          :: TRUE
 PREVIEW          :: TRUE
 
-CHAPTER :: Chapitre 1
+CHAPTER :: Découvrir \texttt{genTex} !
 
-	SUB_SECTION :: Test 1
+	SUB_SECTION :: Introduction
 
-	CODE :: Java :: Titre du code
-		public static void main (string args[]){
-			system.out.print("coucou");
-		}
-	END
+	Le \LaTeX~ est un peu repoussant pour les débutants, mais il est très interessant de travailler avec car il permet
+	de faire des document d'une qualité inégalée. C'est pourquoi j'ai créé ce langage de "programmation" qui vous permet de
+	generer des documents \LaTeX~ facilement. Vous devez juste apprendre les bases les plus simples de \LaTeX~. Le logiciel
+	s'occupe du reste !
 END
 
 CHAPTER :: Chapitre 2

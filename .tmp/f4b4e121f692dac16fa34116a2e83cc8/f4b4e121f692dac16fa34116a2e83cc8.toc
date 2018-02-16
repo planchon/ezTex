@@ -1,5 +1,5 @@
 \select@language {french}
-\contentsline {section}{\numberline {I.}Chapitre 1}{1}{section.1}
-\contentsline {subsection}{\numberline {I.1.}Test 1}{1}{subsection.1.1}
+\contentsline {section}{\numberline {I.}D\IeC {\'e}couvrir \texttt {genTex} !}{1}{section.1}
+\contentsline {subsection}{\numberline {I.1.}Introduction}{1}{subsection.1.1}
 \contentsline {section}{\numberline {II.}Chapitre 2}{1}{section.2}
 \contentsline {subsection}{\numberline {II.1.}Test 2}{1}{subsection.2.1}

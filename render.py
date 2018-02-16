@@ -13,7 +13,6 @@ def makeRender(latex):
         os.makedirs(latexRenderDir)
     copy2('latexTemplate/template.tex', latexRenderFile)
     copy2('latexTemplate/logo.png', latexRenderDir + "/logo.png")
-    copy2('latexTemplate/mcode.sty', latexRenderDir + "/mcode.sty")
 
     replaceList = [["__NAME__", latex.author], ["__LITTLE_TITLE__", latex.subTitle], ["__MAIN_TITLE__", latex.mainTitle], ["__MAIN__", latex.finalMainData]]
 

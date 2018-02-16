@@ -5,11 +5,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 
-\usepackage[pdftex,
-            pdfauthor={__NAME__},
-            pdftitle={__LITTLE_TITLE__},
-            pdfsubject={__MAIN_TITLE__}, pdfcreator={pdflatex}]{hyperref}
-
 \usepackage[top = 50mm, headheight=62pt]{geometry}
 \usepackage{titleps}
 \usepackage{tabularx, booktabs, multirow}
@@ -19,28 +14,23 @@
 \usepackage{amsmath}
 \usepackage[linesnumbered,ruled]{algorithm2e}
 \usepackage[noend]{algpseudocode}
+
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
-\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
-\renewcommand{\lstlistingname}{Code}
-\SetKwRepeat{Do}{do}{while}
-\def\code#1{\texttt{#1}}
 
 \usepackage{multicol}
 \usepackage{color}
 \usepackage{comment}
-\usepackage{tocstyle}
+
 
 \nonstopmode
 
-\usepackage[format]{listings}
-\usepackage[most]{tcolorbox} %pour avoir la jolie boite autour du code source
-% nouvel environnement listing : texCode, pour le Latex
+\usepackage[most]{tcolorbox}
 
-% Tous les différents langages de programmation supportés  (ceux que je connais lel)
 \newtcblisting[auto counter]{texCode}[2][]{
      sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
      fonttitle = \bfseries,
      colframe = gray,
      listing only,
@@ -49,6 +39,7 @@
 }
 
 \newtcblisting[auto counter]{cppCode}[2][]{
+     keywordstyle=\color[rgb]{0,0,1},
      sharp corners,
      fonttitle = \bfseries,
      colframe = gray,
@@ -58,6 +49,7 @@
 }
 
 \newtcblisting[auto counter]{pytCode}[2][]{
+     keywordstyle=\color[rgb]{0,0,1},
      sharp corners,
      fonttitle = \bfseries,
      colframe = gray,
@@ -65,8 +57,10 @@
      listing options = {basicstyle = \ttfamily, language = Python},
      title = Code Source Python : \thetcbcounter: #2, #1
 }
+
 \newtcblisting[auto counter]{javaCode}[2][]{
      sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
      fonttitle = \bfseries,
      colframe = gray,
      listing only,
@@ -74,15 +68,12 @@
      title = Code Source Java : \thetcbcounter: #2, #1
 }
 
-% \begin{pytCode}
-%   code
-% \end{pytCode}
+\lstset{numbersep=3mm, numbers=left, numberstyle=\tiny,frame=single,framexleftmargin=6mm, xleftmargin=6mm}
 
 \setlength{\columnseprule}{1pt}
 \setlength{\columnsep}{0.5cm}
 \def\columnseprulecolor{\color{black}}
 
-\usetocstyle{standard}
 \makeatletter
      \renewcommand{\thesection}{\Roman{section}.}
      \renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}.}
@@ -104,11 +95,8 @@
           {\reset@font\large\bfseries}}
 \makeatother
 
-\usepackage{hyperref}
-\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
-
-\usepackage{fancyhdr}
 \usepackage{lastpage}
+
 \newpagestyle{style}{
 \sethead{}{%
      \begin{tabularx}{\linewidth}[b]{@{}l>{\raggedleft\arraybackslash}X@{}}
@@ -122,11 +110,17 @@
 \setfoot{}{\thepage}{}
 }
 
+\usepackage{tocstyle}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{mathtools, bm}
-\usepackage{amssymb, bm}
+\usetocstyle{standard}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usepackage[pdftex,
+            pdfauthor={__NAME__},
+            pdftitle={__LITTLE_TITLE__},
+            pdfsubject={__MAIN_TITLE__}, pdfcreator={pdflatex}]{hyperref}
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
 
 \usepackage[french]{babel}
 
