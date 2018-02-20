@@ -8,7 +8,9 @@ class latexObj:
     tableOfContent  = False
     preview         = False
     backup          = False
+    save            = False
     chapter         = []
+    images          = []
 
     def addChapter(self, chapterToAdd):
         self.chapter.append(chapterToAdd)
@@ -23,6 +25,8 @@ class latexObj:
         for chapter in self.chapter:
             self.finalMainData += "\\section{" + chapter.name + "} \n"
             for objects in chapter.processedData:
+                if objects.typeObj == "IMAGE":
+                    self.images.append(objects.rawData[0][1])
                 self.finalMainData += objects.renderToLatex()
 
 class elementObj:
@@ -70,29 +74,30 @@ class chapterObj(elementObj):
         return -1000
 
     def findBreakPoint(self, data, index):
-        breakpoints = ["ALGO", "CODE", "IMAGE", "END"]
+        breakpoints = ["ALGO", "CODE", "IMAGE", "END", "SUB_SECTION", "SUB_SUB_SECTION"]
         for i in range(index, len(data)):
             for brp in breakpoints:
                 if data[i][0] == brp:
                     return i
 
-
     def processRawChapterData(self):
         i = 0
         end = 0
 
-        print '------'
-        print self.name
-
         dataList = self.rawData[0]
-
-        print self.rawData
 
         self.processedData = []
 
+        print ('---------')
+
         while i < len(dataList):
+            print ('managing', dataList[i])
             data = dataList[i][0]
 
+            if data not in ["ALGO", "CODE", "IMAGE", "END", "SUB_SECTION","SUB_SUB_SECTION"]:
+                data = "TEXT"
+
+            print ('type ', data)
             # On traite chaque cas de breakpoint : image, code, algo...
             # et on les mets dans leur obj respectif en vue d'un traitement futur.
 
@@ -106,7 +111,7 @@ class chapterObj(elementObj):
                 end = self.findEndObj(dataList, i)
                 # print("ALGO", dataList[i : end])
                 algo.addRawData(dataList[i : end])
-                i = end + 1
+                i = end
                 self.processedData.append(algo)
 
             elif data == "CODE":
@@ -118,9 +123,8 @@ class chapterObj(elementObj):
 
                 code.rawData = []
                 end = self.findEndObj(dataList, i)
-                # print(dataList[i : end])
                 code.addRawData(dataList[i : end])
-                i = end + 1
+                i = end
                 self.processedData.append(code)
 
             elif data == "SUB_SECTION":
@@ -128,6 +132,18 @@ class chapterObj(elementObj):
                     sub = subSectionObj(dataList[i][1])
                 else:
                     sub = subSectionObj("Sous section sans titre")
+
+                # print("SUB_SECTION", dataList[i])
+                sub.rawData = []
+                sub.addRawData(dataList[i])
+                i = i + 1
+                self.processedData.append(sub)
+
+            elif data == "SUB_SUB_SECTION":
+                if len(dataList[i]) > 1:
+                    sub = subsubSectionObj(dataList[i][1])
+                else:
+                    sub = subsubSectionObj("Sous section sans titre")
 
                 # print("SUB_SECTION", dataList[i])
                 sub.rawData = []
@@ -146,27 +162,24 @@ class chapterObj(elementObj):
                 i = i + 1
                 self.processedData.append(image)
 
-            else:
+            elif data == "TEXT":
                 # c'est du texte.
                 text = textObj('Je suis du texte, j''ai pas de nom')
                 end = self.findBreakPoint(dataList, i)
+                # print ('break' , dataList[end])
                 text.rawData = []
                 if i != end:
                     text.addRawData(dataList[i : end])
-                    # print("TEXT", dataList[i : end])
+                    print ('dataText', dataList[i : end])
                     self.processedData.append(text)
-                if data == "END":
-                    i = end + 1
+                    i = end
                 else:
-                    i = i + 1
+                    i += 1
 
+            else :
+                i += 1
 
-
-        print('----oo---')
-        print len(self.processedData)
-        for element in self.processedData:
-            print element.rawData
-        print('----vv---')
+            print ('>-- ')
 
 class algoObj(elementObj):
     typeObj = "ALGO"
@@ -181,6 +194,7 @@ class codeObj(elementObj):
         finalString = ""
         data = self.rawData[0]
         lang = data[0][1]
+        # print lang
         if (lang == "C++"):
             finalString += "\\begin{cppCode}{" + data[0][2] + "} \n"
             for i in range(1, len(data)):
@@ -191,6 +205,16 @@ class codeObj(elementObj):
             for i in range(1, len(data)):
                 finalString += data[i][0] + "\n"
             finalString += "\\end{javaCode} \n"
+        if (lang == "Tex"):
+            finalString += "\\begin{texCode}{" + data[0][2] + "} \n"
+            for i in range(1, len(data)):
+                finalString += data[i][0] + "\n"
+            finalString += "\\end{texCode} \n"
+        if (lang == "bash"):
+            finalString += "\\begin{bashCode}{" + data[0][2] + "} \n"
+            for i in range(1, len(data)):
+                finalString += data[i][0] + "\n"
+            finalString += "\\end{bashCode} \n"
 
         return finalString
 
@@ -213,6 +237,15 @@ class subSectionObj(elementObj):
     def renderToLatex(self):
         stringToLatex = ""
         stringToLatex = "\subsection{" + self.rawData[0][1] + "}"
+        return stringToLatex
+
+class subsubSectionObj(elementObj):
+    typeObj = "SUB_SUB_SECTION"
+    pass
+
+    def renderToLatex(self):
+        stringToLatex = ""
+        stringToLatex = "\subsubsection{" + self.rawData[0][1] + "}"
         return stringToLatex
 
 class textObj(elementObj):

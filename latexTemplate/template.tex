@@ -23,6 +23,7 @@
 \usepackage{color}
 \usepackage{comment}
 
+\newcommand\doublePoint{::}
 
 \nonstopmode
 
@@ -35,7 +36,17 @@
      colframe = gray,
      listing only,
      listing options = {basicstyle = \ttfamily, language = TeX},
-     title = Code Source LaTeX : \thetcbcounter: #2, #1
+     title = Code Source LaTeX - \thetcbcounter : #2, #1
+}
+
+\newtcblisting[auto counter]{bashCode}[2][]{
+     sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = Bash},
+     title = Code Source bash - \thetcbcounter : #2, #1
 }
 
 \newtcblisting[auto counter]{cppCode}[2][]{
@@ -45,7 +56,7 @@
      colframe = gray,
      listing only,
      listing options = {basicstyle = \ttfamily, language = C++},
-     title = Code Source C++ : \thetcbcounter: #2, #1
+     title = Code Source C++ - \thetcbcounter : #2, #1
 }
 
 \newtcblisting[auto counter]{pytCode}[2][]{
@@ -55,7 +66,7 @@
      colframe = gray,
      listing only,
      listing options = {basicstyle = \ttfamily, language = Python},
-     title = Code Source Python : \thetcbcounter: #2, #1
+     title = Code Source Python - \thetcbcounter: #2, #1
 }
 
 \newtcblisting[auto counter]{javaCode}[2][]{
@@ -65,10 +76,26 @@
      colframe = gray,
      listing only,
      listing options = {basicstyle = \ttfamily, language = Java},
-     title = Code Source Java : \thetcbcounter: #2, #1
+     title = Code Source Java - \thetcbcounter: #2, #1
 }
 
-\lstset{numbersep=3mm, numbers=left, numberstyle=\tiny,frame=single,framexleftmargin=6mm, xleftmargin=6mm}
+\lstset{%
+     numbersep=3mm,
+		 numbers=left,
+		 numberstyle=\tiny,
+		 frame=single,
+		 framexleftmargin=6mm,
+		 xleftmargin=6mm,
+		 literate=%
+		  	{doublePoint}{::}2 %
+				{code}{CODE}4 %
+				{end}{END}3 %
+				{endl}{endl}4 %
+				{image}{IMAGE}5 %
+				{chapter}{CHAPTER}7 %
+				% {sub}{SUB_SECTION}9 %
+				% {subsub}{SUB_SUB_SECTION}14 %
+}
 
 \setlength{\columnseprule}{1pt}
 \setlength{\columnsep}{0.5cm}
@@ -112,6 +139,7 @@
 
 \usepackage{tocstyle}
 \usepackage[nottoc, notlof, notlot]{tocbibind}
+
 \usetocstyle{standard}
 \usepackage{mathtools}
 \usepackage{amssymb}

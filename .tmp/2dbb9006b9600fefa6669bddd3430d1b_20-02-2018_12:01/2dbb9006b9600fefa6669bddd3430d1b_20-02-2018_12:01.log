@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.16)  16 FEB 2018 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.16)  20 FEB 2018 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**f4b4e121f692dac16fa34116a2e83cc8.tex
-(./f4b4e121f692dac16fa34116a2e83cc8.tex
+**2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.tex
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1294,9 +1294,10 @@ Library (tcolorbox): 'tcbexternal.code.tex' version '3.90'
 Library (tcolorbox): 'tcbmagazine.code.tex' version '3.90'
 ))
 \c@tcb@cnt@texCode=\count199
-\c@tcb@cnt@cppCode=\count266
-\c@tcb@cnt@pytCode=\count267
-\c@tcb@cnt@javaCode=\count268
+\c@tcb@cnt@bashCode=\count266
+\c@tcb@cnt@cppCode=\count267
+\c@tcb@cnt@pytCode=\count268
+\c@tcb@cnt@javaCode=\count269
  (/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
@@ -1312,7 +1313,7 @@ Package tocstyle Warning: THIS IS AN ALPHA VERSION!
 (tocstyle)                THERE IS NO SUPPORT, IF YOU USE THIS PACKAGE!
 (tocstyle)                Maybe it would be better, not to load this package.
 
-\tocstyle@indentstyle=\count269
+\tocstyle@indentstyle=\count270
 Package tocstyle Info: no tocstyle.cfg found on input line 856.
 ) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -1337,15 +1338,15 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count270
-\calc@Bcount=\count271
+\calc@Acount=\count271
+\calc@Bcount=\count272
 \calc@Adimen=\dimen309
 \calc@Bdimen=\dimen310
 \calc@Askip=\skip78
 \calc@Bskip=\skip79
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count272
+\calc@Ccount=\count273
 \calc@Cskip=\skip80
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -1355,7 +1356,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count273
+\g_MT_multlinerow_int=\count274
 \l_MT_multwidth_dim=\dimen311
 \origjot=\skip81
 \l_MT_shortvdotswithinadjustabove_dim=\dimen312
@@ -1421,15 +1422,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen318
-\Hy@linkcounter=\count274
-\Hy@pagecounter=\count275
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count276
+\Hy@SavedSpaceFactor=\count277
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -1441,7 +1442,7 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count277
+\c@Hy@tempcnt=\count278
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -1449,7 +1450,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen319
-\Fld@menulength=\count278
+\Fld@menulength=\count279
 \Field@Width=\dimen320
 \Fld@charsize=\dimen321
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -1461,17 +1462,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count279
-\c@Item=\count280
-\c@Hfootnote=\count281
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count282
-\c@bookmark@seq@number=\count283
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -1480,7 +1481,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip82
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 123.
+Package hyperref Info: Option `colorlinks' set `true' on input line 151.
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
@@ -1490,7 +1491,7 @@ Language: frenchb 2016/02/13 v3.1l French support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count284
+\babel@savecnt=\count285
 \U@D=\dimen322
 )
 \l@acadian = a dialect from \language\l@french 
@@ -1502,11 +1503,11 @@ Package babel Info: Making ; an active character on input line 343.
 Package babel Info: Making ! an active character on input line 344.
 Package babel Info: Making ? an active character on input line 345.
 \FBguillskip=\skip85
-\FBguill@level=\count285
+\FBguill@level=\count286
 \FB@everypar=\toks43
 \FB@Mht=\dimen323
-\std@mcc=\count286
-\dec@mcc=\count287
+\std@mcc=\count287
+\dec@mcc=\count288
 
 
 Package frenchb.ldf Warning: Please load the "listings" package
@@ -1517,24 +1518,24 @@ Package frenchb.ldf Warning: Please load the "listings" package
 \leftmarginFB=\skip88
 \parindentFFN=\dimen324
 )) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(./f4b4e121f692dac16fa34116a2e83cc8.aux)
-\openout1 = `f4b4e121f692dac16fa34116a2e83cc8.aux'.
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.aux)
+\openout1 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 157.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1575,16 +1576,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count288
+\scratchcounter=\count289
 \scratchdimen=\dimen325
 \scratchbox=\box104
-\nofMPsegments=\count289
-\nofMParguments=\count290
+\nofMPsegments=\count290
+\nofMParguments=\count291
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count291
+\MPscratchCnt=\count292
 \MPscratchDim=\dimen326
-\MPnumerator=\count292
-\makeMPintoPDFobject=\count293
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1601,7 +1602,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 129.
+LaTeX Info: Redefining \microtypecontext on input line 157.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1619,40 +1620,40 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 ABD: EveryShipout initializing macros
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 129.
-Package tocstyle Info: prepare \l@part for redefinition on input line 129.
-Package tocstyle Info: prepare \l@section for redefinition on input line 129.
-Package tocstyle Info: prepare \l@subsection for redefinition on input line 129
+(lastpage)             ! on input line 157.
+Package tocstyle Info: prepare \l@part for redefinition on input line 157.
+Package tocstyle Info: prepare \l@section for redefinition on input line 157.
+Package tocstyle Info: prepare \l@subsection for redefinition on input line 157
 .
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 129.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 157.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 129.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 157.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 129
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 157
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 129
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 157
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 129.
+(Font)              <10.95> on input line 157.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 129.
+(Font)              <8> on input line 157.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 129.
-LaTeX Font Info:    Try loading font information for U+msa on input line 129.
+(Font)              <6> on input line 157.
+LaTeX Font Info:    Try loading font information for U+msa on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1660,7 +1661,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 129.
+LaTeX Font Info:    Try loading font information for U+msb on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1669,11 +1670,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 Package tocstyle Info: prepare \l@subsubsection for redefinition on input line 
-129.
-Package tocstyle Info: prepare \l@table for redefinition on input line 129.
-Package tocstyle Info: prepare \l@figure for redefinition on input line 129.
+157.
+Package tocstyle Info: prepare \l@table for redefinition on input line 157.
+Package tocstyle Info: prepare \l@figure for redefinition on input line 157.
 \AtBeginShipoutBox=\box105
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1681,26 +1682,26 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count294
+\c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
 
-(./f4b4e121f692dac16fa34116a2e83cc8.out)
-(./f4b4e121f692dac16fa34116a2e83cc8.out)
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.out)
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.out)
 \@outlinefile=\write7
-\openout7 = `f4b4e121f692dac16fa34116a2e83cc8.out'.
+\openout7 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.out'.
 
-LaTeX Info: Redefining \degres on input line 129.
-LaTeX Info: Redefining \dots on input line 129.
-LaTeX Info: Redefining \up on input line 129.
+LaTeX Info: Redefining \degres on input line 157.
+LaTeX Info: Redefining \dots on input line 157.
+LaTeX Info: Redefining \up on input line 157.
 
-(./f4b4e121f692dac16fa34116a2e83cc8.toc
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.toc
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.42499pt
 number indent by parent (toc, 1):  0.0pt
-text indent calculated (toc, 1): 19.69452pt
+text indent calculated (toc, 1): 16.42499pt
 number indent calculated (toc, 1): 0.0pt
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 2.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
@@ -1715,25 +1716,65 @@ Package microtype Info: Loading generic settings for font family
 
 number indent by \l@... (toc, 2):  16.42499pt
 text indent by \l@... (toc, 2):  25.18501pt
-number indent by parent (toc, 2):  19.69452pt
-text indent calculated (toc, 2): 25.24548pt
-number indent calculated (toc, 2): 19.69452pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
 number indent by \l@... (toc, 1):  0.0pt
 text indent by \l@... (toc, 1):  16.42499pt
 number indent by parent (toc, 1):  0.0pt
-text indent calculated (toc, 1): 19.69452pt
+text indent calculated (toc, 1): 16.42499pt
 number indent calculated (toc, 1): 0.0pt
 number indent by \l@... (toc, 2):  16.42499pt
 text indent by \l@... (toc, 2):  25.18501pt
-number indent by parent (toc, 2):  19.69452pt
-text indent calculated (toc, 2): 25.24548pt
-number indent calculated (toc, 2): 19.69452pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
+number indent by \l@... (toc, 3):  41.61002pt
+text indent by \l@... (toc, 3):  35.03995pt
+number indent by parent (toc, 3):  41.61002pt
+text indent calculated (toc, 3): 35.03995pt
+number indent calculated (toc, 3): 41.61002pt
+number indent by \l@... (toc, 3):  41.61002pt
+text indent by \l@... (toc, 3):  35.03995pt
+number indent by parent (toc, 3):  41.61002pt
+text indent calculated (toc, 3): 35.03995pt
+number indent calculated (toc, 3): 41.61002pt
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
+number indent by \l@... (toc, 1):  0.0pt
+text indent by \l@... (toc, 1):  16.42499pt
+number indent by parent (toc, 1):  0.0pt
+text indent calculated (toc, 1): 16.42499pt
+number indent calculated (toc, 1): 0.0pt
+
+Overfull \hbox (2.09834pt too wide) detected at line 10
+\T1/lmr/bx/n/10.95 III. 
+ []
+
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
+number indent by \l@... (toc, 2):  16.42499pt
+text indent by \l@... (toc, 2):  25.18501pt
+number indent by parent (toc, 2):  16.42499pt
+text indent calculated (toc, 2): 25.18501pt
+number indent calculated (toc, 2): 16.42499pt
 )
 \tf@toc=\write8
-\openout8 = `f4b4e121f692dac16fa34116a2e83cc8.toc'.
+\openout8 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.toc'.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 131.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 159.
 
 
 ! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
@@ -1744,14 +1785,410 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.143 ...2}\begin{cppCode}{Je suis un code en c++}
-                                                  
+l.168 \begin{bashCode}{Installation de ezTex}
+                                             
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
 Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
-\openout5 = `f4b4e121f692dac16fa34116a2e83cc8.listing'.
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+Underfull \hbox (badness 10000) in paragraph at lines 164--171
+
+ []
+
+<logo.png, id=62, 199.947pt x 108.405pt> <use logo.png> <use logo.png>
+File: logo.png Graphic file (type png)
+
+<use logo.png>
+Package pdftex.def Info: logo.png used on input line 174.
+(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+ <./logo.png>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 176.
+
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 \begin{bashCode}{Structure de ezTex}
+                                          
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.190 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.190 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+<use logo.png> <use logo.png>
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 202.
+(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
+ [2]
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.206 ...bashCode}{L'environnement d'organisation}
+                                                  
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.212 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.212 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \begin{bashCode}{L'environnement code}
+                                            
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+Underfull \hbox (badness 10000) in paragraph at lines 213--220
+
+ []
+
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \begin{bashCode}{L'environnement image}
+                                             
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+
+ []
+
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229 \begin{bashCode}{Commande de compilation}
+                                               
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing) <use logo.png>
+<use logo.png>
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 232.
+(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
+ [3] <use logo.png> <use logo.png>
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 232.
+(pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
+
+[4]
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 ...urce}\begin{bashCode}{Hello-world en C++}
+                                                  
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 \begin{cppCode}{Hello world !}
+                                    
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
 
 (/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
 File: lstlang1 2002/07/31 v1.0d listings language file
@@ -1762,44 +2199,103 @@ File: lstlang1 2002/07/31 v1.0d listings language file
 (/usr/share/texmf/tex/latex/fpc-3.0.0/lstmisc.sty
 File: lstmisc.sty 2002/04/01 1.0 (Carsten Heinz)
 )
-(./f4b4e121f692dac16fa34116a2e83cc8.listing) 
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+
+! Package pgfkeys Error: I do not know the key '/tcb/keywordstyle', to which yo
+u passed '\color [rgb]{0,0,1}', and I am going to ignore it. Perhaps you misspe
+lled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 ...s}\begin{bashCode}{Intégration d'images}
+                                                  
+(That was another \errmessage.)
+
+\openout5 = `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing'.
+
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang1.sty
+File: lstlang1 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang2.sty
+File: lstlang2 2002/07/31 v1.0d listings language file
+)
+(/usr/share/texmf/tex/latex/fpc-3.0.0/lstlang3.sty
+File: lstlang3 2002/07/31 v1.0d listings language file
+)
+
+! Package Listings Error: Couldn't load requested language.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 \end{bashCode}
+                    
+The following languages weren't loadable:
+    ,bash$
+This may cause errors in the sequel.
+
+
+! Package Listings Error: language bash undefined.
+
+See the Listings package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.251 \end{bashCode}
+                    
+The language is not loadable. Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.listing)
+<meme.jpg, id=123, 301.125pt x 221.82875pt>
+File: meme.jpg Graphic file (type jpg)
+ <use meme.jpg>
+Package pdftex.def Info: meme.jpg used on input line 255.
+(pdftex.def)             Requested size: 120.44786pt x 88.72992pt.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
 AED: lastpage setting LastPage
-<logo.png, id=27, 199.947pt x 108.405pt> <use logo.png> <use logo.png>
+<use logo.png> <use logo.png>
 File: logo.png Graphic file (type png)
-
-<use logo.png>
-Package pdftex.def Info: logo.png used on input line 150.
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 260.
 (pdftex.def)             Requested size: 99.97325pt x 54.20236pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [5 <./meme.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 260.
 
- <./logo.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
- (./f4b4e121f692dac16fa34116a2e83cc8.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
-Package rerunfilecheck Info: File `f4b4e121f692dac16fa34116a2e83cc8.out' has no
-t changed.
-(rerunfilecheck)             Checksum: A19DAC3F3A98B1889F525626C03CA48F;217.
+(./2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 260.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 260.
+Package rerunfilecheck Info: File `2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_
+12:01.out' has not changed.
+(rerunfilecheck)             Checksum: 0C73BBCA098CD89D3E2731FEDCC6ECEC;767.
  ) 
 Here is how much of TeX's memory you used:
- 35367 strings out of 493029
- 682639 string characters out of 6136234
- 915086 words of memory out of 5000000
- 38281 multiletter control sequences out of 15000+600000
- 48738 words of font info for 55 fonts, out of 8000000 for 9000
+ 35638 strings out of 493029
+ 689576 string characters out of 6136234
+ 936029 words of memory out of 5000000
+ 38416 multiletter control sequences out of 15000+600000
+ 52385 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,19n,106p,10491b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,19n,106p,10508b,1091s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt1
-0.pfb>
-Output written on f4b4e121f692dac16fa34116a2e83cc8.pdf (1 page, 161493 bytes).
+hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on 2dbb9006b9600fefa6669bddd3430d1b_20-02-2018_12:01.pdf (5 page
+s, 234111 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 12850 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 190 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 15471 words of extra memory for PDF output out of 17280 (max. 10000000)
 

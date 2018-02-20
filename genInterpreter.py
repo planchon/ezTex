@@ -17,8 +17,11 @@ def interpretProcessedData(processedData):
             latex.tableOfContent = True
         if lines[0] == "PREVIEW" and lines[1] == "TRUE":
             latex.preview = True
+        # garde une copie toute les minutes
         if lines[0] == "BACK_UP" and lines[1] == "TRUE":
             latex.backup = True
+        if lines[0] == "SAVE" and lines[1] == "TRUE":
+            latex.save = True
         if lines[0] == "CHAPTER":
             chapter = chapterObj(lines[1])
             chapter.rawData = []

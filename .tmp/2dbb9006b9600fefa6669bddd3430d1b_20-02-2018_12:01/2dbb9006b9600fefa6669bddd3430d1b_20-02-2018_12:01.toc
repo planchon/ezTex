@@ -1,0 +1,12 @@
+\select@language {french}
+\contentsline {section}{\numberline {I.}D\IeC {\'e}couvrir \texttt {ezTex} !}{1}{section.1}
+\contentsline {subsection}{\numberline {I.1.}Introduction}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {I.2.}L'installer ?}{1}{subsection.1.2}
+\contentsline {section}{\numberline {II.}Comment utiliser \texttt {ezTex} ?}{2}{section.2}
+\contentsline {subsection}{\numberline {II.1.}La cr\IeC {\'e}ation et compilation du document \texttt {ezTex}}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {II.1.a}La preface}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {II.1.b}Le corps et ses \IeC {\'e}lements}{3}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {II.2.}La compilation}{3}{subsection.2.2}
+\contentsline {section}{\numberline {III.}Exemples d'utilisation :}{5}{section.3}
+\contentsline {subsection}{\numberline {III.1.}Exemples de code source}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {III.2.}Exemples d'int\IeC {\'e}gration d'images}{5}{subsection.3.2}

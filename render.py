@@ -2,15 +2,31 @@ from shutil import copy2
 import os
 import fileinput
 import hashlib
+import sys
+import datetime
 
 def makeRender(latex):
+
+    now = datetime.datetime.now()
+
     hashName = hashlib.md5(latex.mainTitle)
-    latex.mainTitleHashed = hashName.hexdigest()
+    if latex.backup:
+        latex.mainTitleHashed = hashName.hexdigest() + '_' + now.strftime("%d-%m-%Y_%H:%M")
+    else:
+        latex.mainTitleHashed = hashName.hexdigest()
     latexRenderDir = ".tmp/{}/".format(latex.mainTitleHashed)
     latexRenderFilePDF = latexRenderDir + "{}.pdf".format(latex.mainTitleHashed)
     latexRenderFile = latexRenderDir + "{}.tex".format(latex.mainTitleHashed)
     if not os.path.exists(latexRenderDir):
         os.makedirs(latexRenderDir)
+
+    for image in latex.images:
+        if not os.path.exists(((sys.argv[1]).split('/'))[0] + '/' + image):
+            print ('L\'image ' + image + ' n\'est pas dans le dossier du fichier ezTex. FIN' )
+            return
+        else:
+            copy2(((sys.argv[1]).split('/'))[0] + '/' + image, latexRenderDir)
+
     copy2('latexTemplate/template.tex', latexRenderFile)
     copy2('latexTemplate/logo.png', latexRenderDir + "/logo.png")
 
@@ -35,7 +51,7 @@ def makeRender(latex):
 
     os.chdir("../..")
 
-    copy2(latexRenderFilePDF, 'render/{}'.format(latex.mainTitle + ".pdf"))
-    os.system("clear")
-
-    print("La PDF a ete sauvgarder comme " + latex.mainTitle + ".pdf dans /render \n Merci d\'avoir utilise genTex !")
+    if latex.save:
+        copy2(latexRenderFilePDF, 'render/{}'.format(latex.mainTitle + ".pdf"))
+        os.system("clear")
+        print("La PDF a ete sauvgarder comme " + latex.mainTitle + ".pdf dans /render \n Merci d\'avoir utilise genTex !")

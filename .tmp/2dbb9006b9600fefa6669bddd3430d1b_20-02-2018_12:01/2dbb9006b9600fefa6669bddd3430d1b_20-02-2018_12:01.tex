@@ -1,0 +1,260 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[top = 50mm, headheight=62pt]{geometry}
+\usepackage{titleps}
+\usepackage{tabularx, booktabs, multirow}
+\usepackage{graphicx, adjustbox, microtype}
+\usepackage{lipsum}
+
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[noend]{algpseudocode}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{comment}
+
+\newcommand\doublePoint{::}
+
+\nonstopmode
+
+\usepackage[most]{tcolorbox}
+
+\newtcblisting[auto counter]{texCode}[2][]{
+     sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = TeX},
+     title = Code Source LaTeX - \thetcbcounter : #2, #1
+}
+
+\newtcblisting[auto counter]{bashCode}[2][]{
+     sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = Bash},
+     title = Code Source bash - \thetcbcounter : #2, #1
+}
+
+\newtcblisting[auto counter]{cppCode}[2][]{
+     keywordstyle=\color[rgb]{0,0,1},
+     sharp corners,
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = C++},
+     title = Code Source C++ - \thetcbcounter : #2, #1
+}
+
+\newtcblisting[auto counter]{pytCode}[2][]{
+     keywordstyle=\color[rgb]{0,0,1},
+     sharp corners,
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = Python},
+     title = Code Source Python - \thetcbcounter: #2, #1
+}
+
+\newtcblisting[auto counter]{javaCode}[2][]{
+     sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily, language = Java},
+     title = Code Source Java - \thetcbcounter: #2, #1
+}
+
+\lstset{%
+     numbersep=3mm,
+		 numbers=left,
+		 numberstyle=\tiny,
+		 frame=single,
+		 framexleftmargin=6mm,
+		 xleftmargin=6mm,
+		 literate=%
+		  	{doublePoint}{::}2 %
+				{code}{CODE}4 %
+				{end}{END}3 %
+				{endl}{endl}4 %
+				{image}{IMAGE}5 %
+				{chapter}{CHAPTER}7 %
+				% {sub}{SUB_SECTION}9 %
+				% {subsub}{SUB_SUB_SECTION}14 %
+}
+
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{0.5cm}
+\def\columnseprulecolor{\color{black}}
+
+\makeatletter
+     \renewcommand{\thesection}{\Roman{section}.}
+     \renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}.}
+     \renewcommand{\thesubsubsection}{\Roman{section}.\arabic{subsection}.\alph{subsubsection}}
+\makeatother
+
+\makeatletter
+     \renewcommand{\section}{\@startsection{section}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\Large\bfseries	}}
+     \renewcommand{\subsection}{\@startsection{subsection}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\large\bfseries}}
+     \renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{\z@}%
+          {-3.5ex \@plus -1ex \@minus -.2ex}%
+          {2.3ex \@plus .2ex}%
+          {\reset@font\large\bfseries}}
+\makeatother
+
+\usepackage{lastpage}
+
+\newpagestyle{style}{
+\sethead{}{%
+     \begin{tabularx}{\linewidth}[b]{@{}l>{\raggedleft\arraybackslash}X@{}}
+          \smash{\raisebox{-0.7\height}{\includegraphics[scale=0.5]{logo.png}}}& \today \\
+          \cmidrule[2pt]{2-2}
+          & \huge \bfseries Présentation de ezTex \\
+          & Rapport de version : alpha 18.2.1 \\
+          \addlinespace
+          \midrule[0.4pt]
+     \end{tabularx}}{}
+\setfoot{}{\thepage}{}
+}
+
+\usepackage{tocstyle}
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+
+\usetocstyle{standard}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usepackage[pdftex,
+            pdfauthor={Paul Planchon},
+            pdftitle={Rapport de version : alpha 18.2.1},
+            pdfsubject={Présentation de ezTex}, pdfcreator={pdflatex}]{hyperref}
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
+
+\usepackage[french]{babel}
+
+\pagestyle{style}
+
+\begin{document}
+
+\tableofcontents\section{Découvrir \texttt{ezTex} !} 
+\subsection{Introduction}Le \LaTeX~ est un peu repoussant pour les débutants, mais il est très interessant de travailler avec car il permet
+de faire des documents d'une qualité inégalée. C'est pourquoi j'ai créé ce langage de "programmation" qui vous permet de
+generer des documents \LaTeX~ facilement. Vous devez juste apprendre les bases les plus simples de \LaTeX. Le logiciel
+s'occupe du reste !
+\subsection{L'installer ?}\texttt{ezTex} est très simple à utiliser. Une commande suffit pour créer vos documents, documents d'une qualité exceptionnel (c'est du \LaTeX~ s'il vous plait) !
+Pour ce faire, vous devrez installer \texttt{python} et \LaTeX~ biensur ! \newline
+\smallskip
+Voici comment faire sur Linux-GNU : \newline
+\begin{bashCode}{Installation de ezTex} 
+>: sudo apt-get install python -y
+>: sudo apt-get install texlive-full
+\end{bashCode} 
+\smallskip
+Ces deux commandes vous permettent d'utiliser \texttt{ezTex}.
+\newpage
+\section{Comment utiliser \texttt{ezTex} ?} 
+\subsection{La création et compilation du document \texttt{ezTex}}Utiliser \texttt{ezTex} vous oblige a savoir comment créer et compiler votre document. Dans les prochaines versions une interface graphique (GUI) sera disponible.
+Pour l'instant, vous allez devoir créer votre document, il suffit de créer un fichier avec un éditeur de text comme \texttt{atom}, \texttt{geany}, ou encore \texttt{nano} et \texttt{emacs} (pour les plus motivés)
+avec l'extension \texttt{.eztex}
+La structure d'un document \texttt{ezTex} est très simple :
+\smallskip
+\begin{bashCode}{Structure de ezTex} 
++- Une "preface"
++- Un corps
+   +- Un element de section (chapter)
+      +- Du code
+	 +- Du texte
+	 +- Des images
+	 +- ...
+   +- Une fin a l'element de section
+\end{bashCode} 
+\subsubsection{La preface}La préface c'est un peu le cerveau de \texttt{ezTex}, c'est là où vous allez donner toutes les instructions de compilation. Cette partie permet aussi de définir la titre, sous-titre, date et auteur.
+Vous disposez de plusieurs élements pour la personnaliser : \newline
+\begin{itemize}
+\item \texttt{TITLE} : vous permet de définir le titre
+\item \texttt{SUB\_TITLE} : vous permet de définir le sous-titre
+\item \texttt{AUTHOR} : vous permet de définir l'auteur
+\item \texttt{TABLE\_OF\_CONTENT} : active (si \texttt{TRUE}) ou désactive la table des matières
+\item \texttt{SAVE} : garde le fichier compilé dans le dossier \texttt{\/render}
+\item \texttt{BACK\_UP} : Fait une copie à chaque compilations (si l'ancienne compilation est plus vielle d'une minute).
+\item \texttt{PREVIEW} : active la prévisualisation
+\end{itemize}
+\newpage
+\subsubsection{Le corps et ses élements}Une fois la préface configurée, vous allez pouvoir créer votre document. Sachez pour commencer que \texttt{toutes} les commandes \LaTeX~ sont disponibles.
+Ainsi, si \texttt{ezTex} ne propose pas une fonctionnalitée, vous pouvez faire ce que vous voulez en utilisant \LaTeX. \newline
+Les commandes que \texttt{ezTex} propose sont :
+\begin{bashCode}{L'environnement d'organisation} 
+chapter doublePoint TITRE
+	(text, algo, images ...)
+	SUB_SECTION doublePoint TITRE
+	SUB_SUB_SECTION doublePoint TITRE
+end
+\end{bashCode} 
+Vous pouvez organiser vos documents en chapitre, sous-section et sous-sous-section. Les formats par défault de \LaTeX sont aussi supportés, mais
+une belle intégration dans le document \texttt{ezTex} n'est pas garantie. \newline
+\begin{bashCode}{L'environnement code} 
+code doublePoint LANGAGE doublePoint TITRE
+	Du code ici, indentation
+		comprise
+end
+\end{bashCode} 
+Les langages supportés sont : \texttt{java, c++, tex \& bash}. Plus a venir dans le futur ! \newline
+\begin{bashCode}{L'environnement image} 
+image doublePoint LIEN IMAGE doublePoint ARG TAILLE doublePoint TITRE
+\end{bashCode} 
+Cet environment permet d'afficher des images dans votre document. Elles seront centrés. La taille est personnnalisable a votre gise. Si vous voulez une autre
+disposition, vous pouvez utiliser l'environment que propose \LaTeX. \newline
+Un environment "algo" va faire apparition dans les prochaines versions. Il vous permettra de créer des algorithmes en pseudo code d'une façon extremement simple !
+\subsection{La compilation}Pour l'instant la compilation se fait par terminal. Dans les prochaines versions une interface graphique sera disponible. Utilisez la commande suivante :
+\begin{bashCode}{Commande de compilation} 
+python genTex.py FICHER\_A\_COMPILER
+\end{bashCode} 
+\newpage
+\section{Exemples d'utilisation :} 
+\subsection{Exemples de code source}\begin{bashCode}{Hello-world en C++} 
+code doublePoint C++ doublePoint Hello world !
+	int main(){
+		cout << "Hello world!" << endl;
+	}
+end
+\end{bashCode} 
+Se compilera pour donner :
+\begin{cppCode}{Hello world !} 
+int main(){
+	cout << "Hello world!" << endl;
+}
+\end{cppCode} 
+Nota Bene : L'indentation n'est pas supportée pas \texttt{ezTex}. Vous devez indenter vous-même. \texttt{ezTex} ne détruiera pas l'indentation cependant.
+Le logiciel la comprendra et la transcrira. \newline
+\subsection{Exemples d'intégration d'images}\begin{bashCode}{Intégration d'images} 
+image doublePoint meme.jpg doublePoint scale = 0.4 doublePoint COMMENT ?
+\end{bashCode} 
+Nota Bene : Les images doivent etre dans le même dossier que le fichier \texttt{ezTex}. \newline
+Se compilera pour donner :
+\begin{figure}[h!] 
+\centerline{\fbox{\includegraphics[scale = 0.4]{meme.jpg}}} 
+\caption{COMMENT ?} 
+\end{figure}\smallskip
+
+
+\end{document}

@@ -1,0 +1,166 @@
+TITLE            :: Présentation de ezTex
+SUB_TITLE        :: Rapport de version : alpha 18.2.1
+AUTHOR           :: Paul Planchon
+DATE             :: TODAY
+TABLE_OF_CONTENT :: TRUE
+BACK_UP          :: TRUE
+PREVIEW          :: TRUE
+SAVE             :: TRUE
+
+CHAPTER :: Découvrir \texttt{ezTex} !
+
+	SUB_SECTION :: Introduction
+
+	Le \LaTeX~ est un peu repoussant pour les débutants, mais il est très interessant de travailler avec car il permet
+	de faire des documents d'une qualité inégalée. C'est pourquoi j'ai créé ce langage de "programmation" qui vous permet de
+	generer des documents \LaTeX~ facilement. Vous devez juste apprendre les bases les plus simples de \LaTeX. Le logiciel
+	s'occupe du reste !
+
+	SUB_SECTION :: L'installer ?
+
+	\texttt{ezTex} est très simple à utiliser. Une commande suffit pour créer vos documents, documents d'une qualité exceptionnel (c'est du \LaTeX~ s'il vous plait) !
+	Pour ce faire, vous devrez installer \texttt{python} et \LaTeX~ biensur ! \newline
+
+	\smallskip
+
+	Voici comment faire sur Linux-GNU : \newline
+
+	CODE :: bash :: Installation de ezTex
+		>: sudo apt-get install python -y
+		>: sudo apt-get install texlive-full
+	END
+
+	\smallskip
+
+	Ces deux commandes vous permettent d'utiliser \texttt{ezTex}.
+
+	\newpage
+
+END
+
+CHAPTER :: Comment utiliser \texttt{ezTex} ?
+
+	SUB_SECTION :: La création et compilation du document \texttt{ezTex}
+
+	Utiliser \texttt{ezTex} vous oblige a savoir comment créer et compiler votre document. Dans les prochaines versions une interface graphique (GUI) sera disponible.
+	Pour l'instant, vous allez devoir créer votre document, il suffit de créer un fichier avec un éditeur de text comme \texttt{atom}, \texttt{geany}, ou encore \texttt{nano} et \texttt{emacs} (pour les plus motivés)
+	avec l'extension \texttt{.eztex}
+	La structure d'un document \texttt{ezTex} est très simple :
+
+	\smallskip
+
+	CODE :: bash :: Structure de ezTex
+		+- Une "preface"
+		+- Un corps
+		   +- Un element de section (chapter)
+		      +- Du code
+			 +- Du texte
+			 +- Des images
+			 +- ...
+		   +- Une fin a l'element de section
+	END
+
+	SUB_SUB_SECTION :: La preface
+
+	La préface c'est un peu le cerveau de \texttt{ezTex}, c'est là où vous allez donner toutes les instructions de compilation. Cette partie permet aussi de définir la titre, sous-titre, date et auteur.
+	Vous disposez de plusieurs élements pour la personnaliser : \newline
+
+	\begin{itemize}
+		\item \texttt{TITLE} : vous permet de définir le titre
+		\item \texttt{SUB\_TITLE} : vous permet de définir le sous-titre
+		\item \texttt{AUTHOR} : vous permet de définir l'auteur
+		\item \texttt{TABLE\_OF\_CONTENT} : active (si \texttt{TRUE}) ou désactive la table des matières
+		\item \texttt{SAVE} : garde le fichier compilé dans le dossier \texttt{\/render}
+		\item \texttt{BACK\_UP} : Fait une copie à chaque compilations (si l'ancienne compilation est plus vielle d'une minute).
+		\item \texttt{PREVIEW} : active la prévisualisation
+	\end{itemize}
+
+	\newpage
+
+	SUB_SUB_SECTION :: Le corps et ses élements
+
+	Une fois la préface configurée, vous allez pouvoir créer votre document. Sachez pour commencer que \texttt{toutes} les commandes \LaTeX~ sont disponibles.
+	Ainsi, si \texttt{ezTex} ne propose pas une fonctionnalitée, vous pouvez faire ce que vous voulez en utilisant \LaTeX. \newline
+
+	Les commandes que \texttt{ezTex} propose sont :
+
+	CODE :: bash ::  L'environnement d'organisation
+		chapter doublePoint TITRE
+			(text, algo, images ...)
+			SUB_SECTION doublePoint TITRE
+			SUB_SUB_SECTION doublePoint TITRE
+		end
+	END
+
+	Vous pouvez organiser vos documents en chapitre, sous-section et sous-sous-section. Les formats par défault de \LaTeX sont aussi supportés, mais
+	une belle intégration dans le document \texttt{ezTex} n'est pas garantie. \newline
+
+	CODE :: bash ::  L'environnement code
+		code doublePoint LANGAGE doublePoint TITRE
+			Du code ici, indentation
+				comprise
+		end
+	END
+
+	Les langages supportés sont : \texttt{java, c++, tex \& bash}. Plus a venir dans le futur ! \newline
+
+	CODE :: bash ::  L'environnement image
+		image doublePoint LIEN IMAGE doublePoint ARG TAILLE doublePoint TITRE
+	END
+
+	Cet environment permet d'afficher des images dans votre document. Elles seront centrés. La taille est personnnalisable a votre gise. Si vous voulez une autre
+	disposition, vous pouvez utiliser l'environment que propose \LaTeX. \newline
+
+	Un environment "algo" va faire apparition dans les prochaines versions. Il vous permettra de créer des algorithmes en pseudo code d'une façon extremement simple !
+
+	\newpage
+
+	SUB_SECTION :: La compilation
+
+	Pour l'instant la compilation se fait par terminal. Dans les prochaines versions une interface graphique sera disponible. Utilisez la commande suivante :
+
+	CODE :: bash :: Commande de compilation
+		python genTex.py FICHER\_A\_COMPILER
+	END
+END
+
+CHAPTER :: Exemples d'utilisation :
+
+	SUB_SECTION :: Exemples de code source
+
+	CODE :: bash :: Hello-world en C++
+		code doublePoint C++ doublePoint Hello world !
+			int main(){
+				cout << "Hello world!" << endl;
+			}
+		end
+	END
+
+	Se compilera pour donner :
+
+	CODE :: C++ :: Hello world !
+		int main(){
+			cout << "Hello world!" << endl;
+		}
+	END
+
+	Nota Bene : L'indentation n'est pas supportée pas \texttt{ezTex}. Vous devez indenter vous-même. \texttt{ezTex} ne détruiera pas l'indentation cependant.
+	Le logiciel la comprendra et la transcrira. \newline
+
+	\newpage
+
+	SUB_SECTION :: Exemples d'intégration d'images
+
+	CODE :: bash :: Intégration d'images
+		image doublePoint meme.jpg doublePoint scale = 0.4 doublePoint COMMENT ?
+	END
+
+	Nota Bene : Les images doivent etre dans le même dossier que le fichier \texttt{ezTex}. \newline
+
+	Se compilera pour donner :
+
+	IMAGE :: meme.jpg :: scale = 0.4 :: COMMENT ?
+
+	\smallskip
+
+END
