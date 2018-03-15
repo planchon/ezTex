@@ -3,7 +3,7 @@ SUB_TITLE        :: Rapport de version : alpha 18.2.1
 AUTHOR           :: Paul Planchon
 DATE             :: TODAY
 TABLE_OF_CONTENT :: TRUE
-BACK_UP          :: TRUE
+BACK_UP          :: FALSE
 PREVIEW          :: TRUE
 SAVE             :: TRUE
 

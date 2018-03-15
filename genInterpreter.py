@@ -11,6 +11,10 @@ def interpretProcessedData(processedData):
             latex.subTitle = lines[1]
         if lines[0] == "AUTHOR":
             latex.author = lines[1]
+        if lines[0] == "LOGO":
+            latex.logo = lines[1]
+        if lines[0] == "SCALE_LOGO":
+            latex.scaleLogo = lines[1]
         if lines[0] == "DATE":
             latex.date = lines[1]
         if lines[0] == "TABLE_OF_CONTENT" and lines[1] == "TRUE":

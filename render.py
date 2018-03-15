@@ -20,6 +20,11 @@ def makeRender(latex):
     if not os.path.exists(latexRenderDir):
         os.makedirs(latexRenderDir)
 
+    if latex.logo == None:
+        latex.logo = "logo.png"
+    else:
+        latex.images.append(latex.logo)
+
     for image in latex.images:
         if not os.path.exists(((sys.argv[1]).split('/'))[0] + '/' + image):
             print ('L\'image ' + image + ' n\'est pas dans le dossier du fichier ezTex. FIN' )
@@ -30,7 +35,7 @@ def makeRender(latex):
     copy2('latexTemplate/template.tex', latexRenderFile)
     copy2('latexTemplate/logo.png', latexRenderDir + "/logo.png")
 
-    replaceList = [["__NAME__", latex.author], ["__LITTLE_TITLE__", latex.subTitle], ["__MAIN_TITLE__", latex.mainTitle], ["__MAIN__", latex.finalMainData]]
+    replaceList = [["__NAME__", latex.author], ["__LITTLE_TITLE__", latex.subTitle], ["__MAIN_TITLE__", latex.mainTitle], ["__MAIN__", latex.finalMainData], ["__LOGO__", latex.logo], ["__SCALE_LOGO__", latex.scaleLogo]]
 
     with open(latexRenderFile, "r") as infile:
         body = infile.read()

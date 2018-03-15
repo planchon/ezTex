@@ -1,0 +1,71 @@
+TITLE :: Mouvement d'un satellite
+SUB_TITLE :: Travail en Atelier - Marzook, Planchon \& Valette
+TABLE_OF_CONTENT :: TRUE
+BACK_UP          :: TRUE
+PREVIEW          :: TRUE
+SAVE             :: TRUE
+LOGO             :: logo_eisti.png
+SCALE_LOGO       :: 0.3
+
+CHAPTER :: Présentation du problème
+
+END
+
+CHAPTER :: Mise en place des équations différentiels
+	SUB_SECTION :: Départ avec les équations de Newton
+
+Entre deux corps, la force de Gravitation s'applique. Notons $M$ la Terre, $m$ le satellite, $r$ le rayon entre les deux corps.
+
+$$\overrightarrow{F_{M/m}} = -G \frac{M*m}{r^2}*\overrightarrow{u_{M/m}}$$
+
+Aussi, nous notons $m : x$ \begin{pmatrix}x\\y \end{pmatrix}, et donc $\overrightarrow{u_{M/m}} = \frac{x}{\parallel x \parallel}$. Aussi au départ, nous suposerons
+que le satellite est sur l'axe des abscisse à la position $x$.\\
+Alors étant donné que $r = x$, nous avons $r^2 = x^tx = $\begin{pmatrix}x&y \end{pmatrix} \begin{pmatrix}x\\y \end{pmatrix} $= x^2 + y^2$.
+
+\begin{center}
+\begin{align*}
+   \overrightarrow{F_{M/m}}
+   &= -G \frac{Mm}{r^2}\times\overrightarrow{u_{M/m}}\\
+   &= -G \frac{Mm}{x^tx}\times\frac{x}{\parallel x \parallel}\\
+   &= -G \frac{Mm}{x^tx}\times\frac{x}{\sqrt{x^tx}}\\
+   &= -G \frac{Mm}{(x^tx)^{3/2}} \times x
+\end{align*}
+\end{center}
+
+\newpage
+
+	SUB_SECTION :: Utilisation du PFD
+D'après le principe fondamentale de la dynamique (et du fait que la seule force soit $\overrightarrow{F_{M/m}}$) nous avons :
+\begin{align*}
+	\overrightarrow{F_{M/m}}
+	&= m\vec{a}\\
+	&= m \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}
+\end{align*}
+Donc, en remplacant $\overrightarrow{F_{M/m}}$, nous avons :
+\begin{align*}
+	-G \frac{Mm}{(x^tx)^{3/2}} \times \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix} &= m \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}\\
+	-G \frac{M}{(x^tx)^{3/2}} \times \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix} &= \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}\\
+\end{align*}
+Pour simplifier les calculs, nous alons supposer que $M * G = 1$, ainsi,
+$$ \ddot{x} = -(x^tx)^{-3/2}x$$
+Donc,
+$$\ddot{x} + (x^tx)^{-3/2}x= 0$$
+Et si $(x^tx)^{-3/2}$ est constant alors on a $$\ddot{x} + \omega^2(t) \times x = 0$ avec $\omega^2 = $(x^tx)^{-3/2}$. Cela est l'équation d'un oscillateur harmonique.
+Finalement nous avons le système suivant :
+\begin{equation*}
+\left\{\begin{matrix}
+\ddot{x_1} + \omega^2(t) x_1 = 0\\
+\ddot{x_2} + \omega^2(t) x_2 = 0
+\end{matrix}\right.
+\end{equation*}
+
+END
+
+CHAPTER :: Cas constant ($\omega(t)$ constant)
+END
+
+CHAPTER :: Cas non constant ($\omega(t)$ varie)
+END
+
+CHAPTER :: Lois de Kepler
+END
