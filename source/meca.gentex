@@ -1,71 +1,185 @@
-TITLE :: Mouvement d'un satellite
-SUB_TITLE :: Travail en Atelier - Marzook, Planchon \& Valette
+TITLE :: Reconnaissance de caractères
+SUB_TITLE :: TIPE - Planchon, Croce, Durand \& Marzook
 TABLE_OF_CONTENT :: TRUE
-BACK_UP          :: TRUE
+BACK_UP          :: FALSE
 PREVIEW          :: TRUE
 SAVE             :: TRUE
 LOGO             :: logo_eisti.png
 SCALE_LOGO       :: 0.3
 
-CHAPTER :: Présentation du problème
+CHAPTER :: La reconnaissance par Intelligence artificielle
+	SUB_SECTION :: Présentation des réseaux de neurones
+		SUB_SUB_SECTION :: Les notations
 
-END
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[x=1.7cm, y=1.5cm, >=stealth]
 
-CHAPTER :: Mise en place des équations différentiels
-	SUB_SECTION :: Départ avec les équations de Newton
+\foreach \m/\l [count=\y] in {1,2,3,4,5,6,7,8,missing,9}
+	\node [every neuron/.try, neuron \m/.try] (input-\m) at (0,2.5-\y*0.5) {};
 
-Entre deux corps, la force de Gravitation s'applique. Notons $M$ la Terre, $m$ le satellite, $r$ le rayon entre les deux corps.
+\foreach \m [count=\y] in {1,2,3,4,5,6,7,missing,8}
+	\node [every neuron/.try, neuron \m/.try ] (hidden-\m) at (2,2.25-\y*0.5) {};
 
-$$\overrightarrow{F_{M/m}} = -G \frac{M*m}{r^2}*\overrightarrow{u_{M/m}}$$
+\foreach \m [count=\y] in {1,2,3,4,5,6,7,missing,8}
+	\node [every neuron/.try, neuron \m/.try ] (hidden2-\m) at (3,2.25-\y*0.5) {};
 
-Aussi, nous notons $m : x$ \begin{pmatrix}x\\y \end{pmatrix}, et donc $\overrightarrow{u_{M/m}} = \frac{x}{\parallel x \parallel}$. Aussi au départ, nous suposerons
-que le satellite est sur l'axe des abscisse à la position $x$.\\
-Alors étant donné que $r = x$, nous avons $r^2 = x^tx = $\begin{pmatrix}x&y \end{pmatrix} \begin{pmatrix}x\\y \end{pmatrix} $= x^2 + y^2$.
+\foreach \m [count=\y] in {1,2,3,4,5,6,7,missing,8}
+	\node [every neuron/.try, neuron \m/.try ] (hidden3-\m) at (4,2.25-\y*0.5) {};
 
-\begin{center}
-\begin{align*}
-   \overrightarrow{F_{M/m}}
-   &= -G \frac{Mm}{r^2}\times\overrightarrow{u_{M/m}}\\
-   &= -G \frac{Mm}{x^tx}\times\frac{x}{\parallel x \parallel}\\
-   &= -G \frac{Mm}{x^tx}\times\frac{x}{\sqrt{x^tx}}\\
-   &= -G \frac{Mm}{(x^tx)^{3/2}} \times x
-\end{align*}
-\end{center}
+\foreach \m [count=\y] in {1,2,3,4,missing,n}
+	\node [every neuron/.try, neuron \m/.try ] (output-\m) at (6,1.5-\y * 0.5) {};
+
+\foreach \l [count=\i] in {1,2,3,4,5,6,7,8,n}
+	\draw [<-] (input-\i) -- ++(-1,0)
+	 	node [above, midway] {$x_{\l}$};
+
+\foreach \i in {1,...,8}
+  	\foreach \j in {1,...,7}
+    		\draw [->] (input-\i) -- (hidden-\j);
+
+\foreach \i in {1,...,7}
+  	\foreach \j in {1,...,7}
+    		\draw [->] (hidden-\i) -- (hidden2-\j);
+
+\foreach \i in {1,...,7}
+  	\foreach \j in {1,...,7}
+    		\draw [->] (hidden2-\i) -- (hidden3-\j);
+
+\foreach \i in {1,...,7}
+  	\foreach \j in {1,...,5}
+    		\draw [->] (hidden3-\i) -- (output-\j);
+
+\foreach \l [count=\i] in {1,2,3,4}
+	\draw [->] (output-\i) -- ++ (1,0)
+		node [above, midway] {$y_{\l}$};
+
+\foreach \l [count=\x from 0] in {entrées, cachés, sorties}
+  	\node [align=center, above] at (\x * 3,2.5) {Calques \\ \textbf{\l}};
+
+\draw [->] (output-n) -- ++ (1,0)
+	node [above, midway] {$y_n$};
+
+\end{tikzpicture}
+\caption{Représentation d'un réseau de neurones}
+\end{figure}
+
+\vskip 0.5cm
+
+\textbf{Notations utilisées :}\\
+\vskip 0.3cm
+\begin{itemize}
+	\item $x_i^{(n)}$ : donnée d'entrée à la colonne $n$ et ligne $i$.
+	\item $y_i^{(n)}$ : donnée de sortie à la colonne $n$ et ligne $i$.
+	\item $w_{ba}^{(n)}$ : poids du neurone $b$ vers $a$ et colonne $n$.
+	\item $b_i^{(n)}$ : biai à la colonne $n$ et ligne $i$.
+	\item $t_i$ : sortie \textbf{voulue} à la ligne $i$.
+	\item $X^{(n)}$ : Matrice des entrées à la colonne $n$.
+	\item $Y_i^{(n)}$ : Matrice sortie à la colonne $n$.
+	\item $W^{(n)}$ : Matrice des poids de la ligne $n-1$ à $n$.s
+	\item $B^{(n)}$ : Matrice des biai à la colonne $n$.
+\end{itemize}
+\vskip 0.25cm
+On note $\displaystyle \sigma(x) = \frac{1}{1 + e^x}$ et $\displaystyle \sigma(x)' = \sigma(x)(1 - \sigma(x))$\\
+et $\displaystyle h(n) = \sum_{n} w_i^{(n)}y_i^{(n-1)}$
+
+		SUB_SUB_SECTION :: Fonctionnement d'un neurone
+
+		SUB_SUB_SECTION :: Idée de réseau de neurones
+\newpage
+	SUB_SECTION :: La méthode de rétropropagation par calcul du gradient
+		SUB_SUB_SECTION :: Qu'est-ce que la rétropropagation
+
+Nous avons vu que les réseaux de neurones “apprenaient”, nous avons aussi montré que cet apprentissage était le
+coeur des réseaux de neurones et leur force. Mais nous n’avons pas encore expliqué le fonctionnement de cet apprentissage.
+C’est ce dont cette partie va traiter.
+
+\vskip 0.5cm
+
+Pour l’instant un réseau de neurone n’est qu’une grosse fonction qui prend $n$ vecteur $x_i$ (par exemple tous les pixels d’une image)
+en entrée et s'entraîne à donner en sortie $m$ résultats $y_i$ (par exemple la valeur d’un chiffre).\\
+Sauf que contrairement à des fonctions simples comme une application linéaire, qui est déterminée entièrement par l’image d’une base,
+on ne peut pas donner une “base d’image de caractères” à notre réseau de neurone. Le fonctionnement d’un réseau de neurone est donc calqué
+sur la nature, et plus précisément sur le fonctionnement du cerveau : lui travaille grâce à l’apprentissage.
+\vskip 0.25cm
+Mais là encore une question se pose, comment définir le mot “apprentissage” en mathématique (et donc en informatique) ?
+Cette grande question a été résolue en partie en 1980 par David Rumelhart, Geoffrey Hinton, et Ronald Williams dans le papier
+\textbf{“Learning representation by back-propagating errors”}. En appliquant cette méthode au réseau de neurone, il sera capable de s’affiner
+pour avoir un pourcentage d’erreur faible, voir très faible dans les meilleurs cas.
+\vskip 0.25cm
+Le but de l’algorithme est de calculer un minimum local de la fonction “réseau de neurone”. C’est à dire trouver la solution
+la plus optimale au problème posé, dans notre cas, la reconnaissance d’image. C’est à dire trouver la meilleur combinaison de
+poids et de biais (étant donné que ce sont les seules variables que nous pouvons changer). Pour calculer l'efficacité de la combinaison de
+poids et biais, le réseau va devoir calculer son erreur
+
+$$ E = \frac{1}{2}\sum_{n} (t_i - y_i)^2 $$
+
+Le but de la méthode par rétropropagation est de faire tendre cette fonction vers un minimum local, au mieux vers 0.
+Il est important de noter ici, qu’il est possible que le réseau ne puisse pas trouver
+la solution la plus optimale. Cependant, il est certain qu’il en trouvera une qui est optimisée.
 
 \newpage
 
-	SUB_SECTION :: Utilisation du PFD
-D'après le principe fondamentale de la dynamique (et du fait que la seule force soit $\overrightarrow{F_{M/m}}$) nous avons :
-\begin{align*}
-	\overrightarrow{F_{M/m}}
-	&= m\vec{a}\\
-	&= m \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}
-\end{align*}
-Donc, en remplacant $\overrightarrow{F_{M/m}}$, nous avons :
-\begin{align*}
-	-G \frac{Mm}{(x^tx)^{3/2}} \times \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix} &= m \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}\\
-	-G \frac{M}{(x^tx)^{3/2}} \times \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix} &= \begin{pmatrix}\ddot{x}\\\ddot{y} \end{pmatrix}\\
-\end{align*}
-Pour simplifier les calculs, nous alons supposer que $M * G = 1$, ainsi,
-$$ \ddot{x} = -(x^tx)^{-3/2}x$$
-Donc,
-$$\ddot{x} + (x^tx)^{-3/2}x= 0$$
-Et si $(x^tx)^{-3/2}$ est constant alors on a $$\ddot{x} + \omega^2(t) \times x = 0$ avec $\omega^2 = $(x^tx)^{-3/2}$. Cela est l'équation d'un oscillateur harmonique.
-Finalement nous avons le système suivant :
-\begin{equation*}
-\left\{\begin{matrix}
-\ddot{x_1} + \omega^2(t) x_1 = 0\\
-\ddot{x_2} + \omega^2(t) x_2 = 0
-\end{matrix}\right.
-\end{equation*}
+Entraîner et nourrir le réseau qu’une fois sera loin de suffir à faire fonctionner l’algorithme de rétropropagation.
+Il va falloir répéter cette étape de nombreuses fois. C’est pourquoi la phase d'entraînement et de “nourrissage” du
+réseau de neurone est séparée en epoch (base de donnée entière), batch (partie d’un epoch) et itérations.
+\vskip 0.25cm
+Nous devons séparer l’étape du nourrissage pour, dans un premier temps optimiser le temps de calcul nécessaire, mais
+aussi pour éviter de “gaver” le réseau. C’est à dire trop le nourrir, menant vers le gavage, c’est à dire un réseau qui
+est incapable de minimiser sa fonction et donc qui ne convergera jamais vers une solution.
+
+IMAGE :: overunder.png :: scale=0.4 :: Exemple de nourrissage de réseaux
+\vskip 0.25cm
+On voit clairement que les images de gauche et de droite font le travail demandé, mais celui de gauche n'est pas précis du tout, et celui de droite l'est beaucoup trop.
+Le réseau de droite sera surement très lent à entrainer car il est trop précis. Aussi il pourra devenir moins précis pour des cas un peu spéciaux.
+\vskip 0.5cm
+Ainsi on ne nourrit pas le réseau avec un
+batch de la taille de l’epoch, mais plutôt avec plusieurs batch, eux-même ayant plusieurs itérations sur le réseau.
+Malheureusement, la meilleur découpe des batch et le nombre d’itération optimale n’est pas obtenable pour l’instant par
+calcul (peut-être prochainement avec un réseau de neurone ?), il faut donc essayer.
+A chaque fois qu’un batch a été traité par le réseau de neurone, on calcul l’erreur moyenne de chaque batch. C’est cette
+erreur moyenne qui est utilisée pour le calcul du gradient.
+
+\newpage
+
+		SUB_SUB_SECTION :: Les mathématiques de la rétropropagation
+
+Le calcul du gradient est le coeur de la rétropropagation, et donc le coeur des réseaux de neurones. Optimiser l’erreur revient à trouver
+un minimum. C’est à dire trouver un endroit où la fonction "dérivée" s'annule.
+Or nous n’avons pas de forme dérivable de cette fameuse fonction. Pour optimiser le réseau il
+suffit donc d’utiliser la méthode des infi-décimaux. C’est à dire calculer $\nabla E$ (gradient de E). Voici la méthode :
+\vskip 0.5cm
+
+\begin{itemize}
+	\item On calcul l'erreur $\displaystyle e_{i}^{n}=\sigma'(h_{i}^{{n}})[t_{i}-y_{i}]$
+	\item On propage l'erreur calculé vers l'arrière : $\displaystyle e_{j}^{{(n-1)}}=g'^{{(n-1)}}(h_{j}^{{(n-1)}})\sum _{i}w_{{ij}}e_{i}^{{(n)}}$, \\ avec $\displaystyle e_{j}^{{(n)}}=\sum _{i}[t_{i}-y_{i}]{\frac  {\partial y_{i}}{\partial h_{j}^{{(n)}}}}$
+	\item Notre but est de minimiser $\displaystyle E={\frac  {1}{2}}\sum _{i}(t_{i}-y_{i})^{2}$, \\c'est à dire $\displaystyle {\frac  {\partial E}{w_{{ab}}^{{(l)}}}}=\sum _{k}{\frac  {\partial x_{k}^{{(n-1)}}}{w_{{ab}}^{{(l)}}}}\sum _{i}w_{{ik}}^{{(n)}}e_{i}^{{(n)}}$
+\end{itemize}
+\vskip 0.25cm
+Une fois avoir calculé les erreurs, on met à jour les poids et les biais de neurones :
+
+$$ {\displaystyle w_{ij}^{(n)}=w_{ij}^{(n)}+\lambda e_{i}^{(n)}x_{j}^{(n-1)}} $$
+
+Le gradient calculé, il suffit de mettre à jour les poids et les biais avec leur valeur respective (calculée avec $-\nabla E$).
+\vskip 0.25cm
+Cette méthode est récursive. On ne peut pas calculer les poids du neurones à la ligne $n$ si on a pas déjà calculé les poids à la ligne $n+1$.
+D’où cette idée de back propagation. Il faut aller de l’erreur vers les poids de l’entrée.
+
+Pour résumer le fonctionnement d’un réseau de neurone par CNN, voici l’algo en pseudo code :
+
+\vskip 0.25cm
+
+CODE :: pseudo :: CNN
+Initialiser les poids
+repeter
+	calculer le "feed-forward"
+	calculer l'erreur
+	calculer le gradient
+	mettre a jour les poids
+jusqu'a precision > precision voulue
 
 END
-
-CHAPTER :: Cas constant ($\omega(t)$ constant)
-END
-
-CHAPTER :: Cas non constant ($\omega(t)$ varie)
-END
-
-CHAPTER :: Lois de Kepler
+	SUB_SECTION :: Application de la technique à la reconnaissance de caractère
+		SUB_SUB_SECTION :: Utilisation de la BDD MNIST sur les algorithmes
+		SUB_SUB_SECTION :: Créations de nos propres bases
 END

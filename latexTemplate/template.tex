@@ -15,10 +15,6 @@
 \usepackage[linesnumbered,ruled]{algorithm2e}
 \usepackage[noend]{algpseudocode}
 
-\makeatletter
-\def\BState{\State\hskip-\ALG@thistlm}
-\makeatother
-
 \usepackage{multicol}
 \usepackage{color}
 \usepackage{comment}
@@ -47,6 +43,16 @@
      listing only,
      listing options = {basicstyle = \ttfamily, language = Bash},
      title = Code Source bash - \thetcbcounter : #2, #1
+}
+
+\newtcblisting[auto counter]{pseudoCode}[2][]{
+     sharp corners,
+     keywordstyle=\color[rgb]{0,0,1},
+     fonttitle = \bfseries,
+     colframe = gray,
+     listing only,
+     listing options = {basicstyle = \ttfamily},
+     title = Pseudo Code - \thetcbcounter : #2, #1
 }
 
 \newtcblisting[auto counter]{cppCode}[2][]{
@@ -135,6 +141,20 @@
           \midrule[0.4pt]
      \end{tabularx}}{}
 \setfoot{}{\thepage}{}
+}
+
+\tikzset{%
+  every neuron/.style={
+    circle,
+    draw,
+    minimum size=0.4cm
+  },
+  neuron missing/.style={
+    draw=none,
+    scale=1.75,
+    text height=0.333cm,
+    execute at begin node=\color{black}$\vdots$
+  },
 }
 
 \usepackage{tocstyle}

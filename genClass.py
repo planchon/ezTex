@@ -22,6 +22,7 @@ class latexObj:
     def renderToLatex(self):
         if self.tableOfContent:
             self.finalMainData += "\\tableofcontents"
+            self.finalMainData += "\\newpage"
         for chapter in self.chapter:
             self.finalMainData += "\\section{" + chapter.name + "} \n"
             for objects in chapter.processedData:
@@ -215,6 +216,11 @@ class codeObj(elementObj):
             for i in range(1, len(data)):
                 finalString += data[i][0] + "\n"
             finalString += "\\end{bashCode} \n"
+        if (lang == "pseudo"):
+            finalString += "\\begin{pseudoCode}{" + data[0][2] + "} \n"
+            for i in range(1, len(data)):
+                finalString += data[i][0] + "\n"
+            finalString += "\\end{pseudoCode} \n"
 
         return finalString
 
