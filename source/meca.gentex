@@ -7,6 +7,322 @@ SAVE             :: TRUE
 LOGO             :: logo_eisti.png
 SCALE_LOGO       :: 0.3
 
+CHAPTER :: Introduction
+Avant même de rentrer à l'EISTI le deep learning était un sujet qui nous passionnait tous. En effet aujourd'hui le deep learning est un sujet trés en vogue dans le monde de l'informatique. C'est pour cela que le jour où nous avons entendu parler de TIPE nous avons tout de suite sauté sur l'occasion pour en apprendre plus sur ce sujet.
+\vskip 0.25cm
+Mais le deep learning étant un sujet extrêment vaste, compliqué et qui evolue constament il nous fallait trouver un angle d'approche pertinent. Mais quoi de mieux que de commencer par la base. L'OCR étant un peu le "HELLO WORLD" de ce sujet il nous a semblé bon de combiner les deux pour en faire notre sujet d'etude.
+\vskip 0.25cm
+Mais alors par quoi commencer? Nous avons alors divisé le sujet en deux grandes parties distinctes: les differents approche de l'OCR (optical charactere recognition ou reconnaissance optique de caractères en Francais) et le deep learning et ces applications dans la reconaissance de caractères.
+\vskip 0.25cm
+Nous esperons sincerement que vous prendrez autant de plaisir à lire notre rapport que nous à l'ecrire.
+\newpage
+END
+
+CHAPTER :: Optical Character Recognition
+	SUB_SECTION :: Qu'est-ce que l'OCR et comment c'est né ?
+
+L’OCR ou optical character recognition est un procédé qui a pour principe de permettre a une machine de reconnaître des caractères.
+En effet cela permet, lors d’un scan ou même de la lecture d’un PDF de récupérer simplement le texte, au lieu de devoir le recopier.
+L’idée de faire reconnaître des caractères à une machine peut paraître simple, mais la mise en place ne l’est pas.
+En effet la première machine à utiliser ce procédé date de 1929 et est due à un ingénieur Allemand, nommé Gustav Tauschek.
+Le principe de cette machine était assez simple, elle était formée d’une série de gabarit (ou filtre) représentant des mots, et la
+machine réagissait lorsque le mot correspondait à un des gabarits.
+
+\vskip 0.4cm
+
+Une trentaine d’années plus tard, certaines entreprises se mettent à utiliser le principe d’OCR pour automatiser certaines tâches.
+Malgré cela le principe utilisé n’est pas au point. C’est pour cela qu’en 1966 l’ATF (American Type Founders) décide de créer une police spéciale,
+ reconnaissable autant  par les machines que par les Hommes. L’OCR-A est née. C’est la première police déchiffrable par l’humain mais également par la machine.
+ Malheureusement les lettres, extrêmement stylisées pour ne pas se ressembler entre elles sont assez compliqués à comprendre pour l’Homme, et sont donc absolument
+ pas agréable à la lecture. C’est pour cela que seulement 2 années après sa création, l’OCR-A est remplacé par l’OCR-B. Cette dernière est devenue une norme mondiale
+ par l’ISO (Organisation Internationale de normalisation).
+
+ IMAGE :: ocra.png :: scale = 0.5 :: Police OCR-A
+
+\vskip 0.4cm
+La pratique de l’OCR est certes intéressante, mais devoir utiliser une police précise est un handicap assez embêtant. C’est exactement pour cette raison que Jacob Rabinow décide,
+pour palier à ce défaut, de comparer chaque caractères du texte à analyser avec la totalité des lettres d’un alphabet donné. La lettre qui en ressort est donc la lettre qui ressemble le
+plus à celle analysé. Cette idée date de 1950, avant même la création des polices exprès, mais elle n’est utilisé que plus tard en raison de quelques défauts dont un majeur,
+le temps qu’elle mettait pour comprendre un mot (au départ la machine était capable d’analyser environ une lettre par minute, de plus une écriture en italique ou
+quelques ratures et la machine était incapable de reconnaître le caractère).
+\vskip 0.25cm
+Aussi étonnant que cela puisse paraître, une des première «entreprise» à ce servir de cette technologie est ni plus ni moins que la poste dans les années 65.
+En effet a cette époque, la poste regroupais les lettres/colis pour la même destination ensemble. Ainsi ils ont décidé d’utiliser un OCR afin de trouver où le colis devais
+être envoyé et en fonction de cela, une étiquette était appliquée, facilitant le travail des postiers.
+\vskip 0.25cm
+Dans les années 90 la vente de scanner portable augmente fortement afin d’aider la PAO (publication assisté par ordinateur). Pour la PAO, le scanner et l’OCR
+sont des choses essentielles. En effet la PAO consiste à rédiger des livres/journaux, en respectant des règles strictes de publications, tout en étant le plus
+agréable à la lecture possible. C’est pour cela que L’OCR est si important, le plus souvent les premières idées se font à la main, puis grâce au scanner et a l’OCR,
+on reconstitue cela sur un ordinateur sans avoir à tout refaire, puis on ajuste les textes ou la police d’écriture, avant d’imprimer à grande échelle.
+\vskip 0.25cm
+Même de nos jours, avec toutes les avancées technologiques réalisées, l’OCR n’est toujours pas parfaite. En effet en raison de l’amélioration des ordinateurs,
+un des problème sur internet est désormais de reconnaître un humain d’une machine. Pour savoir qu’il s’agit bien d’un humain, des tests on été développé. C’est ce que
+l’on nomme les tests de Turing. Un des tests les plus connus aujourd’hui s’appelle le captcha. En effet le principe est simple. Un mot est écrit à l’écran et l’utilisateur doit le
+réécrire, principale difficulté, les lettres sont «mal» formées où liées avec celles d’à côtés, ou alors un trait est sur le devant des lettres. Ainsi, un humain est quand
+même capable de déchiffrer le mot, mais un ordinateur utilisant l’OCR ne peux pas.
+\vskip 0.75cm
+\newpage
+	SUB_SECTION :: Comment ça marche ?
+		SUB_SUB_SECTION :: La préanalyse - Reduction du bruit
+Un des principal soucis avec l’utilisation de l’OCR est la qualité de la «photo» nécessaire pour l’analyse de celle-ci.
+En effet la reconnaissance marche sur les photos/scans, mais pour cela ce dernier ce doit d’être clair. C’est pour cela qu’une préanalyse est toujours nécessaire.
+Cette préanalyse passe par deux procédés principaux, la réduction du bruit, ainsi que la segmentation. C’est donc de ces deux principes que nous allons
+commencer par parler.
+\vskip 0.25cm
+Le bruit, qu’est ce que c’est? Le bruit dont on parle la n’a rien à voir avec une nuisance sonore, en effet il s’agit d’un problème numérique sur une photo.
+Ce problème mène a un ajout de pixels parasites sur l’image, et conduit ainsi à une perte importante de détails. Or pour une reconnaissance de caractère, plus
+ le bruit est élevé plus la chance d’échouer la reconnaissance est élevée. Ainsi nous avons besoin de techniques servant à amoindrir ces effets.
+Parmi tous les bruits qui peuvent influencer une image, nous parlerons des trois principaux concernant l’OCR, le bruit de grenaille, de lecture, et de quantification.
+\vskip 0.25cm
+Le bruit de grenaille, est un soucis du nombre de protons (ou électron selon le dispositif) transportant l’information par pixel. En effet si ce
+nombre est trop faible, les informations arrivant concernant la couleur d’un pixel sont trop peu précises, ainsi de nombreux pixels ne sont pas de la
+onne couleur ou de la bonne teinte, ce qui dans notre cas, peut causer des déformations de lettres.
+A partir du millier de photons par pixel, le bruit est quasiment invisible a l’œil nu.
+Le bruit de lecture quant à lui est dû à un manque de luminosité qui force l’appareil ou le scanner, à augmenter la sensibilité ISO
+(International Organization for Standardization). Plus cette sensibilité augmente, moins l’appareil aura besoin de lumière, mais plus le risque de bruit est élevé.
+Le dernier dont on parlera, est le bruit de quantification. Lors d’une photo c’est un signal analogique qui est récupéré, or on a besoin d’un signal numérique.
+Il passe donc par un convertisseur, dans lequel les valeurs sont discrètes, ainsi le signal se doit d’être une approximation de la valeur de départ.
+Ainsi il y a un risque de bruit.
+\vskip 0.25cm
+\newpage
+Les principaux moyens de gérer le bruit sont les filtres. Il en existe de nombreux, mais commençons par le filtrage linéaire. Si filtre est dit linéaire continue,
+cela signifie que c’est une filtre de convolution (discret ou continu). Je vais donc présenter de façon simplifier et plus imagé le principe. L’image qu’on
+récupère est considéré comme une matrice ou chaque pixel est une case, contenant le nombre correspondant à un intensité de couleurs. On utilise à côté, une
+seconde matrice, nommée noyau de taille 3x3 ou 5x5. Ici on prendra une 3x3 pour rendre la chose plus simple.
+Le filtre, s’effectue pixel par pixel, et consiste a choisir un pixel (qu’on appelle pixel principal),
+et on défini la zone d’action du filtre.
+
+IMAGE :: convolution-calculate.png :: scale=1 :: Fonctionnement du fitre
+
+Ici 3x3 car c’est la taille du noyau. On prends donc une matrice 3x3 dans l’image principale dont le centre est le pixel principal. On multiplie ensuite chaque
+pixel de la zone d’action avec le pixel du noyau correspondant. Et on additionne le tout. On obtient ainsi la nouvelle valeur pour le pixel principal. Il suffit de
+ recommencer avec chaque pixel pour avoir toute l’image filtrée.\\
+Avec en vert le champ d’action, en rouge le pixel principal. Au centre, on retrouve le noyau.
+\vskip 0.25cm
+Dans cet exemple, le calcul a été effectué comme suit :
+$$(40*0)+(42*1)+(46*0) +(46*0)+(50*0)+(55*0)+(52*0)+(56*0)+(58*0) = 42$$
+ce filtre représentant ce noyau permet de décaler tous les pixels vers le bas.
+Chaque filtre, possède donc son noyau représentatif.
+\vskip 0.25cm
+Pour les filtres suivants, une seule étape supplémentaire est nécessaire, celle de diviser le résultat par le nombre de cellules du noyau (donc 9), cela permet de conserver la linéarité.
+Nous allons donc maintenant parler des différents filtres existants. \\
+Le filtre Passe haut, son noyau est représenté juste en dessous
+
+\begin{figure}[h]
+\begin{equation*}
+\begin{bmatrix}
+0 & -1 & 0\\
+-1 & 5 & -1 \\
+0 & -1 & 0
+\end{bmatrix}
+\end{equation*}
+\caption{Matrice passe-haut}
+\end{figure}
+\vskip 0.25cm
+Ce filtre permet de favoriser les pixels à haute intensité, et donc améliore les détails et les contrastes, mais il peux augmenter le bruit, et est peu utilisé dans l’OCR.
+Le filtre Passe bas, représenté ici,
+\vskip 0.25cm
+
+\begin{figure}[h]
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 & 1\\
+1 &  4&1 \\
+1 & 1 & 1
+\end{bmatrix}
+\end{equation*}
+\caption{Matrice passe-bas}
+\end{figure}
+
+agis a l’opposé du filtre précédent, en effet il permet d’adoucir légèrement les détails pour réduire le bruit. C’est l’un des filtre utile a l’OCR, souvent utilisé
+associé au filtre passe haut, pour gérer le mieux la réduction du bruit sans la perte trop importante des details.
+Le filtre moyenne existe également et est un type de filtre passe bas son noyau est exclusivement constituer de ‘1/9’ pour que le pixel principale prenne la moyenne
+ des pixels aux alentours.
+Il existe également un filtre assez important, nommé le filtre médian. Comme son nom l’indique, le principe est de prendre les 9 valeurs présentent dans le champ d’action,
+ les classes dans l’ordre croissant, puis prends la 5eme valeur. Le pixel principal devient alors cette valeur la. Ce filtre permet principalement de retirer les pixels
+  avec une couleurs beaucoup trop différentes de ceux aux alentours.
+Il existe ensuite de nombreux autres filtres plus complexes que ceux cités précédemment, chacun ayant sont utilité précise,
+comme les filtres: Laplacien, Gradient ou Gaussien.
+\vskip 0.5cm
+Ainsi des filtres tels que ceux expliqués précédemment comme le passe-bas par exemple sont absolument essentiels dans la mise en place d’un OCR puisque la présence de bruit est absolument a éviter. Malgré tout cela, la préanalyse n’est pas fini pour autant, en effet il reste une étape extrêmement importante, la segmentation
+
+\newpage
+
+SUB_SUB_SECTION :: La préanalyse - La segmentation
+
+Avant de commencer toute segmentation de l’image, il y a un point important a gérer. En effet il faut permettre à l’ordinateur de reconnaître le texte du fond.
+ Pour cela, une des méthodes les plus simple se nomme, binarisation. Cela consiste à créer deux classes, et a séparer tous les pixels de l’images dans ces deux classes.
+  La limite entre ces deux classe est nommé seuil, dépend du cas, c’est la partie la plus compliqué de l’algorithme à mettre en place.
+   Ce seuil se base le plus souvent sur un histogramme des nuances de gris, et nécessite dans la plupart des cas, le passage d’un filtre passe-bas au préalable.
+    En effet le bruit affecte fortement l’efficacité de cette segmentation.
+Pour en revenir, au seuil, il est difficile à choisir puisqu’il va séparer de manière totale les différents pixels, et la version la plus simple est nommé seuillage global, l’équation ramenant à cela peux se résumé à:
+
+\begin{equation*}
+\forall(i,j) \in \mathrm{N}*\mathrm{M},
+\left\{\begin{matrix}
+1 \text{ si } f(i,j) > \mathscr{S} \\
+0 \text{ sinon }
+\end{matrix}\right.
+\end{equation*}
+
+où
+\begin{itemize}
+	\item $(i,j)$ est un pixel
+	\item $I$ est l'image binarisée
+	\item $f(i,j)$ est la valeur du pixel
+	\item $\mathscr{S}$ Le seuil choisi
+\end{itemize}
+\vskip 0.5cm
+
+Grâce à cette méthode on peux donc séparé le fond du texte, en obtenant à la fin des pixels blanc, le fond, et des noirs, le texte. Les problèmes du seuillage globale (outre la difficulté à trouver le seuil),
+ sont dû à la qualité de l’image, un document mal éclairé ou un changement de couleur de police claire risque de faussé sérieusement le résultat.
+Il existe une méthode plus efficace, nommé le seuillage local. Le principe est le même que précédemment, à un détail près, très important, le seuil dépend de la zone à analyser.
+Il existe deux méthode principales pour cela :
+La méthode de Bernsen, pour l’appliquer, on doit ce focalisé sur un petit espace autour du pixel à analyser et le filtre ressemble donc a :
+\begin{equation*}
+S(i,j) = \frac{(max(i,j) + min(i,j))}{2}
+\end{equation*}
+\vskip 0.25cm
+où
+\begin{itemize}
+	\item $S(i,j)$ est le seuil au point $(i,j)$
+	\item $max(i,j)$ valeur max niveau gris dans l’espace autour de $(i,j)$
+	\item $min(i,j)$ valeur min niveau gris dans l’espace autour de $(i,j)$
+\end{itemize}
+\newpage
+La seconde méthode, celle de Niblack, en utilisant les moyennes et écart type à la place des minimums et maximum pour être moins sensible au bruit
+
+\begin{equation*}
+        S(i,j) = x(i,j) + 0,2 * y(i,j) ;
+\end{equation*}
+\vskip 0.25cm
+où
+\begin{itemize}
+	\item $S(i,j)$ est le seuil au point $(i,j)$
+	\item $x(i,j)$ est l'ecart type dans l’espace autour de $(i,j)$
+	\item $y(i,j)$ est la moyenne des niveaux de gris dans cet espace
+\end{itemize}
+
+\vskip 0.5cm
+
+Ces deux méthodes sont les bases de la binearisation mais connaissent de gros défaut à cause des erreurs présentent sur le document, mais sont extrêmement efficace
+si le document est quasi parfait. Il existe dans ce domaine, encore de nombreuses autres méthodes pour effectuer les mêmes choses, avec des taux de réussite plus ou moins élevé.
+
+Après avoir distingué le fond des textes, faut-il encore séparé chaque phrase des autres. Et encore une fois le nombre de méthode pour y parvenir est extrêmement élevé. Mais il existe deux types d’algorithme principaux, la segmentation ascendante, puis celle descendante.
+Pour la première des deux, le principe consiste à partir des pixels, et à utiliser des approximations, en les liants à leurs voisins si ceux si possède des propriétés en commun (la couleur, ou la nuance de gris par exemple). Une des première méthode à être utilisé pour cela et à l’être toujours est la RLSA (run length smoothing algorithm).
+\vskip 0.5cm
+IMAGE :: Lissage.png :: scale = 0.5 :: Dans l'ordre, image original, lissage horizontale, lissage vertical et enfin RLSA
+\vskip 0.5cm
+Cet algorithme représenté ci-dessus, possède de grands point commun avec le seuillage global utilisé précédemment. En effet, il permet d’effectuer dans le cas global une séparation de phrases avec le reste, et nécessite de définir un seuil, qui dépend du document. Le principe n’est pas extrêmement compliqué. Si l’algorithme repère une série de pixels blanc entre deux pixels noirs, et que cette distance est inférieure au seuil donné, alors ces pixels blanc deviennent noirs. Il suffit ainsi d’effectuer tout l’algorithme horizontalement puis verticalement (avec deux seuils pas forcement égaux) pour obtenir le RLSA.
+
+Pour parler de la segmentation descendante, nous allons expliquer la méthode dites «XY-cut».
+Cette méthode, prends le document au complet et pratique une projection horizontale (ou verticale).
+Une projection horizontale (ou verticale) est donc la somme des niveaux de gris sur la ligne (ou colonne). l’image est donc projeté horizontalement, et, aux endroits où les valeurs sont les plus faibles, découpés pour former des bandes. Puis on effectue une projection verticale sur les bandes pour découper en colonne etc. jusqu’à un certain seuil. Malgré que cette méthode soit efficace, si le texte est un incliné l’algorithme ne pourra jamais le retranscrire correctement.
+
+Ces deux méthodes, si poussé au maximum avec des seuils extrêmement faible, peuvent permettre de segmenter les phrases en mots, et même en lettre malgré une précision loin d’être parfaite
+
+		SUB_SUB_SECTION :: L'analyse - Approches de la reconnaissance de caracteres isolé
+       \vskip 0.5cm
+       La reconnaissance est une tâche diﬂicile à réaliser selon l’application demandée.C’est pour cela que les chercheurs ont développé plusieurs approches. On distingue l’approche statistique et l’approche structurelle. Une différence essentielle réside dans la représentation de la forme : vecteur de caractéristiques dans l’approche statistique,agencement de primitives pour l’approche structurelle. Nous allons rappeler quelques unes de ces approches couramment utilisées en les classant en 4 groupes : structurelle, statistique, neuronale et stochastique. Cette classiﬁcation comprend une part d’arbitraire car celle—ci n’est pas unique. Nous nous limitons ici à la présentation
+       de méthodes dites à apprentissage supervisé c'est a dire où la classe des observations est connue lors de l’apprentissage.
+
+
+           SUB_SUB_SECTION :: L'analyse - Approche structurelle
+
+	  \vskip 0.5cm
+       Les méthodes structurelles se basent sur la structure physique des caractères.
+       Elles cherchent à décomposer le caractère en primitives et à décrire leurs relations.
+       Les primitives sont de type topologique comme un arc, une boucle, etc, et une
+       relation peut être la position relative d’une primitive par rapport à une autre. Généralement le nombre de primitives est assez limité et leur enchaînement peut se décrire par un ensemble de règles d’assemblages. Dans cette approche on distingue plusieurs méthodes :
+
+       \begin{itemize}
+       \item méthodes syntaxiques:
+
+       Ces méthodes sont directement issues de la théorie des langages formels. Elles
+       se basent sur une grammaire formelle. Chaque caractère est représenté par
+       une phrase dans un langage où le vocabulaire est constitué de primitives. La.
+       reconnaissance consiste à déterminer si la phrase de la description du caractère
+       peut être générée par la grammaire. L’inconvénient de ces méthodes est l’absence d’algorithmes eﬂicaces pour l’inférence grammaticale directe.
+       \item comparaison des graphes:
+
+       Cette méthode consiste à construire un graphe où les nœuds contiennent les
+       primitives et les liens entre ces primitives Ainsi la reconnaissance consiste
+       à faire une mise en correspondance entre ce graphe et d’autres graphes re—
+       présentant des caractères de référence construits lors de la phase d’appren-
+       tissage. Cette méthode donne des résultats acceptables.
+       \item comparaison de chaînes:
+       Dans ce cas, les caractères sont représentés par des chaînes de primitives. La.
+       méthode consiste à mesurer la similitude entre les chaînes du caractère à reconnaître et un modèle de référence par calcul de distance.
+
+	  \end{itemize}
+     SUB_SUB_SECTION :: Classiﬁeur bayésien
+           \vskip 0.5cm
+       L’application des méthodes statistiques bayésiennes à la reconnaissance de forme
+       a été formalisée par Chow. Nous supposons que le probléme de repré-
+       sentation des caractères admet un modèle probabiliste. Cette méthode déﬁnit l’appartenance d’un caractère à une classe avec un minimum d’erreur et évalue le risque de la décision à prendre pour un caractère donné. Nous cherchons donc la classe qui maximise la probabilité d’appartenance parmi l’ensemble des classes. L’intérêt de cette méthode est qu’elle repose sur des bases mathématiques très bien déﬁnies.
+
+       Le modele Bayésien est un modele mathemtique statistique.Il exprime la probabilité de "A sachant B" en fonction des probabilités de "B sachant A" et de la probabilité de A. Ce modele  Bayésien est tres utile pour construire des Réseau bayésien qui sont a la fois :
+       \begin{itemize}
+           \item des modèles de représentation des connaissances
+           \item des «machines à calculer» les probabilités conditionnelles
+           \item une base pour des Systèmes d'aide à la décision
+       \end{itemize}
+           SUB_SUB_SECTION :: Méthodes des $k$ plus proches voisins (KPPV)
+           \vskip 0.5cm
+           Ces méthodes consistent, étant donné un point x de R représentant le carac-
+       tère à reconnaître, à déterminer la classe de chacun des k points les plus proches de x parmi l’ensemble des caractères d’apprentissage et à retenir pour la décision la classe la plus représentée. Si k: 1, x est donc attribué à la classe de son plus proche voisin. De plus ces méthodes s’inscrivent dans le cadre des méthodes non bayésiennes et non paramétriques. Les méthodes des KPPV sont lentesen phase de décision puisqu’il faut calculer un nombre très important de distances.Nous remarquons que nous pouvons utiliser plusieurs types de distances parmis lesquelles la distance tangente qui utilise une approximation de Taylor du premier ordre. Pour cette distance il existe deux formes : la distance tangente uni-latérale et la distance tangente bilatérale.Pour résoudre le problème du temps de calcul des chercheurs ont proposé des variantes sub—optimales nécessitant moins de calculs?
+
+	  \newpage
+
+           SUB_SUB_SECTION :: L'analyse - Méthodes de séparation linéaire et non linéaire
+
+       Ces méthodes statistiques sont basées sur la déﬁnition des fonctions permettant
+       de séparer partiellement ou totalement des classes représentées par les vecteurs paramètres de leurs échantillons. Ainsi on peut distinguer deux catégories de fonctions :
+       \begin{itemize}
+           \item fonctions de discrimination linéaires , dans ce cas on parle d’un hyperplan séparateur (surface). Donc le probléme consiste en larecherche du meilleur hyperplan permettant de discriminer les classes. Dans le cas de non séparabilité des classes, on passe dans un espace de plus grande dimension où l’on cherche un séparateur linéaire : ce sont les méthodes SVM (Support Vector Machines).
+           \item fonctions de discrimination non linéaires : fonctions linéaires par morceaux, séparation par des quadriques.
+
+       \end{itemize}
+
+           SUB_SUB_SECTION :: L'analyse - Modèles de Markov cachés
+
+           \vskip 0.5cm
+
+       Un modèle de Markov caché (HMM) est déﬁni par les données suivantes :
+       \begin{itemize}
+           \item un ensemble d’états
+           \item un ensemble de symboles observables dans chaque état
+           \item une matrice des probabilités de transitions
+           \item une matrice des probabilités d’observation
+           \item un ensemble de densités de probabilité initiale.
+
+       \end{itemize}
+
+       Ce modèle utilise essentiellement des données unidimensionnelles, ce qui a permis leur application directe en traitement de la parole, et ensuite pour l’OCR. On peutdistinguer deux types de HMMs :
+       \begin{itemize}
+           \item les HMMs discrets qui modélisent les observations avec des variables discrètes
+           \item les HMMs semi—continus qui modélisent les observations avec un mélange de gaussiennes
+       \end{itemize}
+           L’inconvénient est que les HMMs sont mono—dimensionnels alors que les images de caractères sont en dimension 2, ce qui donne des résultats parfois peu satisfaisantspour une application directe des HMMs.
+		\newpage
+
+	  SUB_SUB_SECTION :: Programmation dynamique 2D
+
+	      \vskip 0.5cm
+       C’est une approche par segmentation de l’image de caractère en régions. Cette segmentation s’obtient par un
+       algorithme de programmation dynamique 2D en optimisant la conﬁgurationglobale par des optimisations partielles sur une des sous—régions (utilisationde champs de Markov, cliques et voisinages d’ordre 1).
+       IMAGE :: segmentation.PNG :: scale=0.4 :: Exemple de segmentation
+
+       SUB_SUB_SECTION :: L'analyse - Le post traitement
+
+	  \vskip 0.5cm
+       Le post traitement intervient apres les etapes de reconnaissance de caracthere afin d'affiner les erreures des algorithmes. Le post traitement utilisant des méthodes linguistiques et contextuelles pour réduire le nombre d'erreurs de reconnaissance : systèmes à base de règles, ou méthodes statistiques basées sur des dictionnaires de mots, de syllabes, de N-grammes(séquences de caractères ou de mots). Dans les systèmes industriels, des techniques spécialisées pour certaines zones de texte (noms, adresses postales) peuvent utiliser des bases de données pour éliminer les solutions incorrectes.
+       SUB_SUB_SECTION :: L'analyse - Generation
+       \vskip 0.5cm
+       Pour finir un fichier au format demandé est donné a l'utilisateur avec la mise en page pour les meilleurs systemes.
+	  \newpage
+END
+
 CHAPTER :: La reconnaissance par Intelligence artificielle
 	SUB_SECTION :: Présentation des réseaux de neurones
 		SUB_SUB_SECTION :: Les notations
@@ -47,7 +363,7 @@ CHAPTER :: La reconnaissance par Intelligence artificielle
     		\draw [->] (hidden2-\i) -- (hidden3-\j);
 
 \foreach \i in {1,...,7}
-  	\foreach \j in {1,...,5}
+  	\foreach \j in {1,...,4}
     		\draw [->] (hidden3-\i) -- (output-\j);
 
 \foreach \l [count=\i] in {1,2,3,4}
