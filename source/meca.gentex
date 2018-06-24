@@ -62,8 +62,8 @@ réécrire, principale difficulté, les lettres sont «mal» formées où liées
 même capable de déchiffrer le mot, mais un ordinateur utilisant l’OCR ne peux pas.
 \vskip 0.75cm
 \newpage
-	SUB_SECTION :: Comment ça marche ?
-		SUB_SUB_SECTION :: La préanalyse - Reduction du bruit
+		SUB_SECTION :: La préanalyse
+			SUB_SUB_SECTION :: La Réduction du bruit
 Un des principal soucis avec l’utilisation de l’OCR est la qualité de la «photo» nécessaire pour l’analyse de celle-ci.
 En effet la reconnaissance marche sur les photos/scans, mais pour cela ce dernier ce doit d’être clair. C’est pour cela qu’une préanalyse est toujours nécessaire.
 Cette préanalyse passe par deux procédés principaux, la réduction du bruit, ainsi que la segmentation. C’est donc de ces deux principes que nous allons
@@ -148,7 +148,7 @@ Ainsi des filtres tels que ceux expliqués précédemment comme le passe-bas par
 
 \newpage
 
-SUB_SUB_SECTION :: La préanalyse - La segmentation
+SUB_SUB_SECTION :: La segmentation
 
 Avant de commencer toute segmentation de l’image, il y a un point important a gérer. En effet il faut permettre à l’ordinateur de reconnaître le texte du fond.
  Pour cela, une des méthodes les plus simple se nomme, binarisation. Cela consiste à créer deux classes, et a séparer tous les pixels de l’images dans ces deux classes.
@@ -220,14 +220,14 @@ Cette méthode, prends le document au complet et pratique une projection horizon
 Une projection horizontale (ou verticale) est donc la somme des niveaux de gris sur la ligne (ou colonne). l’image est donc projeté horizontalement, et, aux endroits où les valeurs sont les plus faibles, découpés pour former des bandes. Puis on effectue une projection verticale sur les bandes pour découper en colonne etc. jusqu’à un certain seuil. Malgré que cette méthode soit efficace, si le texte est un incliné l’algorithme ne pourra jamais le retranscrire correctement.
 
 Ces deux méthodes, si poussé au maximum avec des seuils extrêmement faible, peuvent permettre de segmenter les phrases en mots, et même en lettre malgré une précision loin d’être parfaite
-
-		SUB_SUB_SECTION :: L'analyse - Approches de la reconnaissance de caracteres isolé
+SUB_SECTION :: L'analyse
+		SUB_SUB_SECTION :: Approches de la reconnaissance de caracteres isolé
        \vskip 0.5cm
        La reconnaissance est une tâche diﬂicile à réaliser selon l’application demandée.C’est pour cela que les chercheurs ont développé plusieurs approches. On distingue l’approche statistique et l’approche structurelle. Une différence essentielle réside dans la représentation de la forme : vecteur de caractéristiques dans l’approche statistique,agencement de primitives pour l’approche structurelle. Nous allons rappeler quelques unes de ces approches couramment utilisées en les classant en 4 groupes : structurelle, statistique, neuronale et stochastique. Cette classiﬁcation comprend une part d’arbitraire car celle—ci n’est pas unique. Nous nous limitons ici à la présentation
        de méthodes dites à apprentissage supervisé c'est a dire où la classe des observations est connue lors de l’apprentissage.
 
 
-           SUB_SUB_SECTION :: L'analyse - Approche structurelle
+           SUB_SUB_SECTION :: Approche structurelle
 
 	  \vskip 0.5cm
        Les méthodes structurelles se basent sur la structure physique des caractères.
@@ -274,7 +274,7 @@ Ces deux méthodes, si poussé au maximum avec des seuils extrêmement faible, p
 
 	  \newpage
 
-           SUB_SUB_SECTION :: L'analyse - Méthodes de séparation linéaire et non linéaire
+           SUB_SUB_SECTION :: Méthodes de séparation linéaire et non linéaire
 
        Ces méthodes statistiques sont basées sur la déﬁnition des fonctions permettant
        de séparer partiellement ou totalement des classes représentées par les vecteurs paramètres de leurs échantillons. Ainsi on peut distinguer deux catégories de fonctions :
@@ -284,7 +284,7 @@ Ces deux méthodes, si poussé au maximum avec des seuils extrêmement faible, p
 
        \end{itemize}
 
-           SUB_SUB_SECTION :: L'analyse - Modèles de Markov cachés
+           SUB_SUB_SECTION :: Modèles de Markov cachés
 
            \vskip 0.5cm
 
@@ -313,18 +313,36 @@ Ces deux méthodes, si poussé au maximum avec des seuils extrêmement faible, p
        algorithme de programmation dynamique 2D en optimisant la conﬁgurationglobale par des optimisations partielles sur une des sous—régions (utilisationde champs de Markov, cliques et voisinages d’ordre 1).
        IMAGE :: segmentation.PNG :: scale=0.4 :: Exemple de segmentation
 
-       SUB_SUB_SECTION :: L'analyse - Le post traitement
+       SUB_SUB_SECTION :: Le post traitement
 
 	  \vskip 0.5cm
        Le post traitement intervient apres les etapes de reconnaissance de caracthere afin d'affiner les erreures des algorithmes. Le post traitement utilisant des méthodes linguistiques et contextuelles pour réduire le nombre d'erreurs de reconnaissance : systèmes à base de règles, ou méthodes statistiques basées sur des dictionnaires de mots, de syllabes, de N-grammes(séquences de caractères ou de mots). Dans les systèmes industriels, des techniques spécialisées pour certaines zones de texte (noms, adresses postales) peuvent utiliser des bases de données pour éliminer les solutions incorrectes.
-       SUB_SUB_SECTION :: L'analyse - Generation
-       \vskip 0.5cm
-       Pour finir un fichier au format demandé est donné a l'utilisateur avec la mise en page pour les meilleurs systemes.
 	  \newpage
 END
 
 CHAPTER :: La reconnaissance par Intelligence artificielle
-	SUB_SECTION :: Présentation des réseaux de neurones
+
+SUB_SECTION :: Présentation des réseaux de neurones
+Tout commence en 1955 avec le perceptron de Rosenblatt. C’est un réseau qui est fondé sur un réseau de neurones à deux couches,
+le perceptron est un modèle inspiré de neurones humains pour représenter l’apprentissage et le traitement de l’information.
+\newline
+Il est fondé sur les théories cognitives de Friedrich Hayek et de Donald Hebb. Il permettra de tester les premières méthodes de classification linéaire (toujours utilisées),
+des méthodes qui donneront naissance plus tard aux réseaux de neurones plus complexes comme les perceptrons multicouches et récemment au deep learning.
+\vskip 0.5cm
+Ensuite nous avons en 1996, la méthode du lasso pour traiter un grand nombre de variables d’entrée. En effet, lorsque le nombre de variables grandit si vite que les données deviennent éparses et éloignées, de nombreux algorithmes statistiques classiques donnent des résultats faussées et biaisées. Ce « fléau de la dimension » (sous-entendu de l’espace des variables), concept introduit en 1961 par  Bellman,  concerne tant le traitement de l’image que la finance ou la biostatistique (avec la génomique). Il pose toujours des problèmes théoriques et pratiques et fait l’objet de nombreuses recherches. Le fléau de la dimension nécessite des techniques de réduction de dimension afin de pouvoir représenter les données dans un espace adéquat et plus facilement interprétable par les distances usuelles et les algorithmes d’analyse de données classiques, notamment pour classer des données. Bien que cette méthode fût utilisée à l’origine pour des modèles utilisant l’estimateur usuel des moindres carrés, la « pénalisation lasso » s’étend à de nombreux modèles statistiques.
+\vskip 0.5cm
+C’est en 1998  que Yann LeCun, Yoshua Bengio et d’autres publient des articles sur l’application des réseaux neuronaux à la reconnaissance de l’écriture manuscrite et sur l’optimisation de la rétropropagation. Ils poursuivent les recherches sur les réseaux neuronaux, abandonnées par la plupart des équipes, suite à la parution du livre, très critique, de Marvin Minsky et Seymour Papert, « Perceptrons », publié en 1969. Ils présentent une topologie de réseau de neurones à convolutions adaptée à la reconnaissance de l’écriture manuscrite. Chez AT&T Bell Labs, Le Cun et al. parviennent ainsi à appliquer un algorithme de rétropropagation à un réseau neuronal multicouche pour lui faire reconnaître des chèques de banque. Leur programme de reconnaissance d’écriture manuscrite permet de lire les chèques avec un taux de réussite de 50 %.
+\vskip 0.5cm
+Par la suite, Simon Osindero et Yee-Whye Teh optimisent le fonctionnement des réseaux neuronaux multicouches (A Fast Learning Algorithm For Deep Belief Nets). Le concept du deep learning a été ensuite formalisé par Geoffrey Hinton en 2007 dans « Learning multiple layers of representation ». Il s’appuyait sur les travaux du français Yann LeCun (1989).
+\vskip 0.5cm
+\newpage
+En 2012, le challenge de reconnaissance visuelle à grande échelle d’ImageNet (ILSVCR) est un concours annuel de reconnaissance d’objet. Organisé par l’Université Stanford, l’Université Carnegie-Mellon, l’Université du Michigan et l’Université de Caroline du Nord à Chapel Hill, il est basé sur une énorme base de données d’images annotées, ImageNet, rassemblées par Fei Fei Li et ses collègues de l’université de Princetown depuis 2007. Leur but : aider le développement des logiciels de reconnaissance d’objet. \newline
+Mis à disposition des chercheurs depuis 2009 par le Vision Lab de l’université de Stanford, ImageNet comporte près de 15 millions d’images soigneusement labellisées et décrites à la main et répertoriées en plusieurs milliers de classes d’images (chiens, chats, voitures…). L’ILSVRC permet aux chercheurs de comparer les progrès réalisés en matière de détection sur une plus grande variété d’objets. Il permet aussi de mesurer les progrès de la vision par ordinateur pour le classement d’images à grande échelle, afin de permettre l’extraction et l’annotation efficaces.
+\vskip 0.5cm
+Désormais le concept de deep learning et les avancés dans ce domaine, ne font que s’accroitre avec notamment l’apparition la reconnaissance de visage avec DeepFace ou encore AlphaGo champion de go capable de battre les meilleurs adversaires.
+
+Maintenant nous allons voir quel le concept théorique et pratique du deep Learning.
+\newpage
 		SUB_SUB_SECTION :: Les notations
 
 \begin{figure}[h]
@@ -399,10 +417,59 @@ CHAPTER :: La reconnaissance par Intelligence artificielle
 On note $\displaystyle \sigma(x) = \frac{1}{1 + e^x}$ et $\displaystyle \sigma(x)' = \sigma(x)(1 - \sigma(x))$\\
 et $\displaystyle h(n) = \sum_{n} w_i^{(n)}y_i^{(n-1)}$
 
-		SUB_SUB_SECTION :: Fonctionnement d'un neurone
+SUB_SUB_SECTION :: Fonctionnement d'un neurone
+En réalité un neurone se compose d’un corps cellulaire, d’un axone qui représente le lien de transmission des signaux et d’une synapse qui permet le déclenchement d’un potentiel d’action dans le neurone pour activer une communication avec un autre neurone. Il faut savoir que la force d’un réseau de neurones réside dans la communication de ses neurones à travers des signaux électriques qu’on nomme « influx nerveux ». Ces signaux se caractérisent par des fréquences qui jouent un rôle important au niveau de la propagation des signaux dans le réseau en question.
+Ci-dessous une représentation d’un neurone issu du centre de recherche ICM :
 
-		SUB_SUB_SECTION :: Idée de réseau de neurones
-\newpage
+IMAGE :: neurone.png :: scale = 0.5 :: Schéma d’un neurone et d’un synapse biologique
+\vskip 0.5cm
+L’influx nerveux se propage le long de l’axone pour terminer son chemin au niveau de la terminaison synaptique. Plus la fréquence de celui-ci est importante, plus le neurone produit des substances chimiques : les neurotransmetteurs (ou neuromédiateurs).
+Contenus dans les vésicules, ces derniers sont libérés dans le milieu extracellulaire au niveau de la synapse. Ils vont à leur tour activer ou inhiber un second neurone au niveau de sa dendrite ou de son corps cellulaire. L’influx nerveux poursuit son chemin le long de ce second neurone et ainsi de suite.
+\vskip 0.5cm
+Mais qu’est-ce qu’un neurone en langage machine ?
+Le concept de neurone artificiel fait partie des champs de recherche et d’action du Deep Learning, à tel point que les deux sujets sont souvent à tort confondus. L’objectif du Deep Learning est le suivant : prédire une sortie Y (une caractéristique) à travers un ensemble de données Xi en entrée, que l’on appelle les observations. Un des moyens d’y arriver mis en avant par la recherche a été de simuler la réponse d’un neurone dit “artificiel” à ces observations et de mettre au point un algorithme permettant de traiter et pondérer les observations pour en prédire une caractéristique.
+Le graphe ci-dessous est une représentation d’un neurone artificiel, les dendrites reçoivent des signaux, la fréquence de chaque signal dépend du poids Wi. Ces signaux sont ensuite transmis vers le corps de la cellule. Cette dernière est caractérisée par deux éléments importants, la fonction d’activation et la condition d’activation. C’est en vérifiant la condition d’activation qu’on active l’axone pour émettre à nouveau des signaux aux neurones qui suivent à travers leurs dendrites et ainsi de suite.
+
+IMAGE :: neuroneA.png :: scale = 0.2 :: Schéma d’un neurone artificiel
+
+SUB_SUB_SECTION :: Idée de réseau de neurones
+Les réseaux de neurones artificiels sont tout autant construits sur une architecture semblable,
+en première approximation, à celle du cerveau humain que les neurones en eux mêmes .
+Le réseau reçoit les informations sur une couche réceptrice de "neurones",
+traite ces informations avec ou sans l'aide d'une ou plusieurs couches "cachées" contenant un ou plusieurs neurones et produit un signal (ou plusieurs) de sortie.
+Chaque neurone, qu'il appartienne à la première couche (réceptrice), aux couches cachées ou à la couche de sortie, est lié aux autres neurones par des connexions (similaires aux synapses du cerveau) auxquelles sont affectés des poids (eux-mêmes assimilables aux potentiels synaptiques).
+ On conçoit que deux grands types d'apprentissage des réseaux puissent exister selon que l'on spécifie ou non une variable dépendante à valeurs connues.
+ Pour déterminer la sortie d'un neurone ou réseau de neurone, il faut :
+ \\- tout d'abord pour chaque neurone a activé, le multiplier par son poids w,
+ \\- additionner le produit des neurones et leurs poids avec le bias b,
+ \\- finalement appliquer la fonction sigmoid.
+ \begin{figure}[h]
+ \centering
+	\begin{pmatrix}
+	w_{0,1} & w_{0,2} & \cdots & w_{0,n}\\
+	w_{2,1} & w_{2,2} & \cdots & w_{2,n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	w_{n,1} & w_{n,2} & \cdots & w_{n,n}\\
+	\end{pmatrix}
+	 . \begin{pmatrix}
+		a_{0,0}\\a_{0,1}\\\vdots\\a_{0,n}
+	 \end{pmatrix} + \begin{pmatrix}
+		b_{0,0}\\b_{0,1}\\\vdots\\b_{0,n}
+	 \end{pmatrix}
+	 = \begin{pmatrix}
+		y_1\\y_2\\\vdots\\y_n
+	 \end{pmatrix}
+	\end{figure}
+
+	\vskip 0.5cm
+	C'est à dire $A^{n} * W^{n} + B^{n} = A^{n+1}$. En voici une explication matricielle : La dernière matrice obtenue correspond au resultat attendu en appliquant la fonction sigmooid pour obtenir le minimum d'erreurs possibles.
+ Dans l'apprentissage non supervisé, le réseau combine l'information d'entrée et l'analyse sans référence à une valeur de sortie. De tels réseaux permettent des identifications de caractéristiques spécifiques, des tris, des reconnaissances de formes, de typologies, etc. L'apprentissage supervisé suppose par contre un "output" connu.
+ Chaque information d'entrée est couplée à une valeur de sortie et le réseau cherche à approcher, en minimisant une distance, la fonction implicite contenue dans les informations d'entrée et les valeurs de sortie. Ce type d'apprentissage correspond à des applications où l'on cherche à prédire une variable dépendante, que ce soit sous forme continue ou binaire.
+
+
+
+
+
 	SUB_SECTION :: La méthode de rétropropagation par calcul du gradient
 		SUB_SUB_SECTION :: Qu'est-ce que la rétropropagation
 
@@ -434,8 +501,6 @@ Le but de la méthode par rétropropagation est de faire tendre cette fonction v
 Il est important de noter ici, qu’il est possible que le réseau ne puisse pas trouver
 la solution la plus optimale. Cependant, il est certain qu’il en trouvera une qui est optimisée.
 
-\newpage
-
 Entraîner et nourrir le réseau qu’une fois sera loin de suffir à faire fonctionner l’algorithme de rétropropagation.
 Il va falloir répéter cette étape de nombreuses fois. C’est pourquoi la phase d'entraînement et de “nourrissage” du
 réseau de neurone est séparée en epoch (base de donnée entière), batch (partie d’un epoch) et itérations.
@@ -455,9 +520,7 @@ Malheureusement, la meilleur découpe des batch et le nombre d’itération opti
 calcul (peut-être prochainement avec un réseau de neurone ?), il faut donc essayer.
 A chaque fois qu’un batch a été traité par le réseau de neurone, on calcul l’erreur moyenne de chaque batch. C’est cette
 erreur moyenne qui est utilisée pour le calcul du gradient.
-
 \newpage
-
 		SUB_SUB_SECTION :: Les mathématiques de la rétropropagation
 
 Le calcul du gradient est le coeur de la rétropropagation, et donc le coeur des réseaux de neurones. Optimiser l’erreur revient à trouver
@@ -493,9 +556,63 @@ repeter
 	calculer le gradient
 	mettre a jour les poids
 jusqu'a precision > precision voulue
-
+\newpage
 END
+
 	SUB_SECTION :: Application de la technique à la reconnaissance de caractère
 		SUB_SUB_SECTION :: Utilisation de la BDD MNIST sur les algorithmes
+
+Pour entrainer notre réseau de neurone, nous allons utiliser le Hello World du machine learning, la reconnaissance de charactères avec la base de donnée
+MNIST. C'est une base de donnée libre de droit et disponible gratuitement sur Internet.
+
+IMAGE :: mnist.jpeg :: scale = 0.5 :: Exemple de chiffres de MNIST
+\vskip 0.5cm
+Nous venons de vous montrer les deux techniques que nous allons utiliser pour reconnaître les charactères.
+Mais nous sommes allé plus loin dans nos recherche et avons réussi à comparer les deux algorithmes.
+Un des gros inconvénient des réseaux de neurones est leur phase d'apprentissage. Il est impossible de faire tourner
+sur la volée un réseau de neurone. Cela prend du temps, mais avec les machines actuelles c'est plutôt rapide. Il faut aussi
+ajouter que nous vous avons proposé un réseau assez ancien. Plein de nouvelles techniques ont été mises en place pour une reconnaissance
+de charactères plus rapide.
+\vskip 0.5cm
+Le papier de Michael Sabourin et Amar Mitiche "Optical character recognition by a neural network" nous donne des chiffres sur les performance des deux types de méthodes.
+La reconnaissance de charactères classique reconnait juste 95.9\% des 110 000 images proposées tandis que le réseau de neurone reconnait plus de 96.7\% des images justes.
+Les résultats sont assez similaires, mais des algorithmes plus jeunes arrivent à des scores de 99.77\% avec un des réseaux de la conférence Ciresan CVPR de 2012.
+\vskip 0.5cm
+Les deux méthodes se valent, dans le cas d'une page de journal par exemple, l'OCR sera plus rapide que le réseau de neurone (car les charactères imprimés sont là où les OCR excellent),
+tandis que dès que le texte est manuscrit, le réseau de neuronne sera plus performant. Les usages sont différents.
+
 		SUB_SUB_SECTION :: Créations de nos propres bases
+Nous vous avons beaucoup parlé de la base de donnée MNIST pour l'entrainement du réseau. Mais nous voulons aussi créer notre propre donnée. Nous avons pour ambission de créer une base de données
+de lettres de l'alphabet pour faire contraste avec les chiffres de MNIST. Nous ferons participer les étudiant de l'EISTI pour la création de lettres et d'alphabets complets pour avoir la
+meilleur base de donnée possible.
+END
+
+CHAPTER :: Conclusion
+Pour conclure, on remarque qu'aujourd'hui la technologie du deep learning remplace de plus en plus les anciens algorithmes car plus performant et plus flexible pour des tâches moins prédéfinies (exemple reconnaisance de caractères manuscrit).
+
+L'an prochain le TIPE ce complexifie et un projet informatique nous est demandé. C'est pour cela que nous avons aujourd'hui l'idee de créer à la main un algoritme d'OCR basé sur le deep learning avec notre base de donnée de chiffres et de lettres manuscrites. C'est un projet ambicieux mais avec un peu d'acharnement et de bonne volonté nous y arriverons.
+\vskip 1cm
+Merci à M.Bornhofen pour vos conseils, ils nous on permis de nous cadrer dans la bonne direction.
+\newpage
+END
+
+CHAPTER :: Bibliographie
+\begin{itemize}
+	\item Reconnaisance de l'écriture manuscrite, Wikipedia
+	\item Qu’est-ce que l’OCR ? Comment fonctionne la reconnaissance optique de caractères ?,ABBYY
+	\item Reconnaisance de caracteres imprimes et manuscrits,textes et documents basees sur les modeles de Markov cachées, Mustapha Amrouch, Universite Ibn Zohr
+	\item Filtrage numerique par concolution,Frederic Legrand
+	\item Reconnaissance optique de caractères, Wikipedia
+	\item Reconnaissance de caractères par méthodes markoviennes et réseaux bayésiens par Khalid Hallouli a Telecom Paris
+	\item Reconnaissance de caractères : évaluation des performances par Abdel Belaïd et Hubert Cecotti a l’Université Nancy 2
+	\item Systèmes de reconnaissance de caractères pour les non-experts par Nawwaf N. Kharma & Rabab K. Ward de l’Université de Colombie-Britannique
+	\item Modèle de Markov caché, Wikipedia
+	\item Réseau bayésien, Wikipedia
+	\item Neural Networks - A Systematic Introduction par Raul Rojas
+	\item Multi-column Deep Neural Networks for Image Classification (https://arxiv.org/abs/1202.2745)
+	\item A comparison study between MLP and Convolutional Neural Network models for character recognition (hal-01525504)
+	\item Rétropropagation du gradient, Wikipedia
+	\item Perceptron multicouche, Wikipedia
+	\item Vidéos de 3blue1brown sur YouTube
+\end{itemize}
 END
